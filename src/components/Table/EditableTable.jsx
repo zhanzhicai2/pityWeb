@@ -16,7 +16,9 @@ export default ({columns, dataSource, title, setDataSource, editableKeys, setEdi
         return [defaultDoms.delete];
       },
       onValuesChange: (record, recordList) => {
-        extra(recordList);
+        if(extra){
+          extra(recordList);
+        }
         setDataSource(recordList);
       },
       onChange: setEditableRowKeys,

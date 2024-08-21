@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Card, Col, Row, Input, Select, Button, Tabs, Radio, Dropdown, Menu } from 'antd';
-import {DownOutlined, SendOutlined, DeleteTwoTone, EditTwoTone, DeleteOutlined} from '@ant-design/icons';
+import {DownOutlined, SendOutlined, DeleteTwoTone, DeleteOutlined} from '@ant-design/icons';
 import EditableTable from '@/components/Table/EditableTable';
+import CodeEditor from "@/components/Postman/CodeEditor";
 
 const { Option } = Select;
 const { TabPane } = Tabs;
@@ -15,16 +16,21 @@ const selectBefore = (
   </Select>
 );
 
-
-
 export default () => {
   const [bodyType, setBodyType] = useState('none');
-  const [rawType, setRawType] = useState('JSON')
+  const [rawType, setRawType] = useState('JSON');
   const [paramsData, setParamsData] = useState([]);
+  const [headers, setHeaders] = useState([]);
   const [editableKeys, setEditableRowKeys] = useState(() => paramsData.map((item) => item.id));
+  const [headersKeys, setHeadersKeys] = useState(()=>headers.map((item)=>item.id));
+  const [body,setBody] = useState(null);
+
+
 
   // 请求url+params
   const [url, setUrl] = useState('');
+
+
 
   // 根据paramsData拼接url
   const joinUrl = (data) => {
@@ -65,10 +71,15 @@ export default () => {
     setRawType(key);
   }
 
-  const onDelete = key => {
-    const data = paramsData.filter(item => item.id !== key)
-    setParamsData(data);
-    joinUrl(data);
+  const onDelete = (columType,key) => {
+    if(columType  === 'params'){
+      const data = paramsData.filter(item => item.id !== key)
+      setParamsData(data);
+      joinUrl(data);
+    }else {
+      const data = headers.filter(item => item.id !==key)
+      setHeaders(data);
+    }
   }
 
   const menu = (
@@ -92,30 +103,32 @@ export default () => {
     </Menu>
   );
 
-  const paramsColumns = [
-    {
-      title: 'KEY',
-      dataIndex: 'key',
-    },
-    {
-      title: 'VALUE',
-      dataIndex: 'value',
-    },
-    {
-      title: 'DESCRIPTION',
-      dataIndex: 'description',
-    },
-    {
-      title: '操作',
-      render: (text, record) => {
-        return <>
-          <DeleteTwoTone style={{cursor: 'pointer', marginLeft: 8}} onClick={()=>{onDelete(record.id)}} twoToneColor="#eb2f96"/>
-          {/*<DeleteOutlined />*/}
-        </>
-      }
-
-    },
-  ]
+  const Columns = columnType=>{
+    return[
+      {
+        title: 'KEY',
+        dataIndex: 'key',
+      },
+      {
+        title: 'VALUE',
+        dataIndex: 'value',
+      },
+      {
+        title: 'DESCRIPTION',
+        dataIndex: 'description',
+      },
+      {
+        title: '操作',
+        render: (text, record) => {
+          return <>
+            <DeleteTwoTone style={{cursor: 'pointer', marginLeft: 8}}
+                           onClick={()=>{onDelete(columnType, record.id)}} twoToneColor="#eb2f96"/>
+            {/*<DeleteOutlined />*/}
+          </>
+        }
+      },
+    ]
+  }
 
   return (
     <Card>
@@ -133,12 +146,14 @@ export default () => {
       <Row style={{ marginTop: 8 }}>
         <Tabs defaultActiveKey='1' style={{width: '100%'}}>
           <TabPane tab='Params' key='1'>
-            <EditableTable columns={paramsColumns} title="Query Params" dataSource={paramsData} setDataSource={setParamsData}
+            <EditableTable columns={Columns("Params")} title="Query Params" dataSource={paramsData} setDataSource={setParamsData}
                            extra={joinUrl} editableKeys={editableKeys} setEditableRowKeys={setEditableRowKeys}
             />
           </TabPane>
           <TabPane tab='Headers' key='2'>
-            这是Headers
+            <EditableTable columns={Columns("headers")} title="Headers" dataSource={headers} setDataSource={setHeaders}
+                           editableKeys={headersKeys} setEditableRowKeys={setHeadersKeys}
+            />
           </TabPane>
           <TabPane tab='Body' key='3'>
             <Row>
@@ -158,6 +173,16 @@ export default () => {
                 </Dropdown>: null
               }
             </Row>
+            {
+              bodyType === 'raw' ?
+                <Row style={{marginTop:12}}>
+                 <Col span={24}>
+                   <Card bodyStyle={{padding:0}}>
+                     <CodeEditor value={body} setValue={setBody} theme="vs-dark" />
+                   </Card>
+                 </Col>
+                </Row>: null
+            }
           </TabPane>
         </Tabs>
       </Row>
