@@ -34,6 +34,12 @@ export default [
                 component: './Request'
               },
               {
+                path: '/test-request',
+                name: '测试调试界面',
+                icon: 'rocket',
+                component: './testRequest'
+              },
+              {
                 path: '/welcome',
                 name: 'welcome',
                 icon: 'smile',
