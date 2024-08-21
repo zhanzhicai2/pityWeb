@@ -36,7 +36,7 @@ export default () => {
         }
       }
     })
-    setUrl(tempUrl);
+    // setUrl(tempUrl);
   }
   const splitUrl = nowUrl => {
     const split = nowUrl.split('?')
