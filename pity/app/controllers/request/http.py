@@ -3,12 +3,17 @@ from flask import jsonify
 from flask import request
 
 from app.middleware.HttpClient import Request
+from app import pity
+from app.utils.decorator import permission
 
 req = Blueprint("request", __name__, url_prefix="/request")
 
 
 @req.route("/http", methods=['POST'])
-def http_request():
+@permission(pity.config.get("MANAGER"))
+# @permission()
+def http_request(user_info):
+# def http_request():
     data = request.get_json()
     method = data.get("method")
     if not method:
@@ -20,4 +25,7 @@ def http_request():
     headers = data.get("headers")
     r = Request(url, data=body, headers=headers)
     response = r.request(method)
-    return jsonify(dict(code=0, data=response, msg="操作成功了"))
+    # return jsonify(dict(code=0, data=response, msg="操作成功了"))
+    if response.get("status"):
+        return jsonify(dict(code=0, data=response, msg="操作成功"))
+    return jsonify(dict(code=110, data=response, msg=response.get("msg")))
