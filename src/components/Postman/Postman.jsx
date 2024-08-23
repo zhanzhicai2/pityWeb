@@ -369,7 +369,7 @@ export default () => {
             <TabPane tab="Body" key="1">
               <CodeEditor
                 value={response.response ? JSON.stringify(response.response, null, 2) : ''}
-                height="30vh"
+                height="70vh"
               />
             </TabPane>
             <TabPane tab="Cookie" key="2">

@@ -3,7 +3,10 @@ import { message } from 'antd';
 export default {
   headers: (json = true) => {
     const token = localStorage.getItem('pityToken');
-    const headers = { token };
+    // 这里跟作者不一样，属于错误修改
+    const userRole = localStorage.getItem("pityUser")
+    const headers = { token,userRole };
+    // const headers = { token};
     if (json) {
       headers['Content-Type'] = 'application/json';
     }
