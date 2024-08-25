@@ -106,6 +106,7 @@ export default () => {
       name: 'owner',
       label: '项目负责人',
       required: true,
+      // message: '项目负责人',
       component: opt,
       type: 'select',
     },
@@ -124,7 +125,7 @@ export default () => {
       message: '请选择项目是否私有',
       type: 'switch',
       valuePropName: 'checked',
-    //   有问题type: 'switch',没有展示出来
+      // defaultValue: false,  默认值
     },
   ];
   return (
