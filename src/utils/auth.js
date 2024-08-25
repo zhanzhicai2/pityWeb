@@ -3,10 +3,11 @@ import { message } from 'antd';
 export default {
   headers: (json = true) => {
     const token = localStorage.getItem('pityToken');
-    // 这里跟作者不一样，属于错误修改
-    const userRole = localStorage.getItem("pityUser")
-    const headers = { token,userRole };
+    // 这里跟作者不一样，属于错误修改，作者是对的，哈哈哈哈
+    // const userRole = localStorage.getItem("pityUser")
+    // const headers = { token,userRole };
     // const headers = { token};
+    const headers = { token };
     if (json) {
       headers['Content-Type'] = 'application/json';
     }
@@ -15,7 +16,8 @@ export default {
   response: (res, info = false) => {
     if (res.code === 0) {
       if (info) {
-        message.info(res.msg);
+        // message.info(res.msg);
+        message.success(res.msg);
       }
       return true;
     }

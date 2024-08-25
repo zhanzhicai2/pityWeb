@@ -34,6 +34,12 @@ export default [
                 component: './Request'
               },
               {
+                path: '/project',
+                name:'项目列表',
+                icon: 'book',
+                component: './Project/Project',
+              },
+              {
                 path: '/test-request',
                 name: '测试调试界面',
                 icon: 'rocket',

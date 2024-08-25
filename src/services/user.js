@@ -1,4 +1,6 @@
 import request from '@/utils/request';
+import {CONFIG} from "@/consts/config";
+import auth from "@/utils/auth";
 export async function query() {
   return request('/api/users');
 }
@@ -7,4 +9,15 @@ export async function queryCurrent() {
 }
 export async function queryNotices() {
   return request('/api/notices');
+}
+export async function listUsers(params) {
+  const res = await request(`${CONFIG.URL}/auth/listUser`, {
+    method: 'GET',
+    params,
+    headers: auth.headers(),
+  });
+  if (auth.response(res)) {
+    return res.data;
+  }
+  return [];
 }
