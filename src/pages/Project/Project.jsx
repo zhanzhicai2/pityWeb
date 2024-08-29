@@ -106,7 +106,6 @@ export default () => {
       name: 'owner',
       label: '项目负责人',
       required: true,
-      // message: '项目负责人',
       component: opt,
       type: 'select',
     },
@@ -125,7 +124,6 @@ export default () => {
       message: '请选择项目是否私有',
       type: 'switch',
       valuePropName: 'checked',
-      // defaultValue: false,  默认值
     },
   ];
   return (
@@ -135,7 +133,7 @@ export default () => {
         title="添加项目"
         left={6}
         right={18}
-        record={{}}
+        record={{private: false}}
         visible={visible}
         onCancel={() => setVisible(false)}
         fields={fields}

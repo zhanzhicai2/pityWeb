@@ -40,6 +40,11 @@ export default [
                 component: './Project/Project',
               },
               {
+                path: '/project/:id',
+                hideInMenu:true,
+                component: './Project/ProjectDetail'
+              },
+              {
                 path: '/test-request',
                 name: '测试调试界面',
                 icon: 'rocket',
