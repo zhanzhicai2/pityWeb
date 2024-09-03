@@ -26,6 +26,7 @@ export default [
               {
                 path: '/',
                 redirect: '/welcome',
+                // redirect: '/request',
               },
               {
                 path: '/request',
