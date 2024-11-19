@@ -46,6 +46,12 @@ export default [
                 component: './Project/ProjectDetail'
               },
               {
+                path: '/config/environment',
+                name: '环境管理',
+                icon: 'rocket',
+                component: './Environment',
+              },
+              {
                 path: '/test-request',
                 name: '测试调试界面',
                 icon: 'rocket',

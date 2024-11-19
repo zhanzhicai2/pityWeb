@@ -1,5 +1,5 @@
-import { Card, Col, Dropdown, Menu, Alert, Row, Spin, Tooltip } from 'antd';
-import React, { useState } from 'react';
+import {Card, Col, Dropdown, Menu, Alert, Row, Spin, Tooltip, Modal, Result} from 'antd';
+import React, { useState, useEffect } from 'react';
 import ProfessionalTree from '@/components/Tree/ProfessionalTree';
 import {
   BugTwoTone,
@@ -137,18 +137,6 @@ export default ({ loading, treeData, fetchData, projectData, userMap }) => {
           }, 24)}
       </>;
     }
-    // if (item.key.indexOf('asserts_') > -1) {
-    //   const id = item.key.split('_')[1];
-    //   if (executeStatus === null) {
-    //     return null;
-    //   }
-    //   return executeStatus[id] !== undefined ? <>
-    //     {Icon(
-    //       executeStatus[id].status ? <CheckCircleTwoTone twoToneColor='#52c41a' /> :
-    //         <CloseCircleTwoTone twoToneColor='red' />, null, () => {
-    //       }, 4)}
-    //   </>: null;
-    // }
   };
 
   const parseStatus = key => {
@@ -228,7 +216,7 @@ export default ({ loading, treeData, fetchData, projectData, userMap }) => {
           <Card bodyStyle={{ padding: 12, minHeight: 800, maxHeight: 800, overflowY: 'auto' }}>
             {
               // mode === 0 ? <Result title='请选择左侧用例' status='info' /> :
-              //   <TestCaseDetail caseId={caseId} userMap={userMap} setExecuteStatus={setExecuteStatus} />
+                // <TestCaseDetail caseId={caseId} userMap={userMap} setExecuteStatus={setExecuteStatus}/>
               RenderView(mode)
             }
           </Card>
