@@ -46,11 +46,23 @@ export default [
                 component: './Project/ProjectDetail'
               },
               {
-                path: '/config/environment',
-                name: '环境管理',
+                path: '/config',
                 icon: 'rocket',
-                component: './Environment',
+                name: '配置中心',
+                routes: [
+                  {
+                    path: '/config/environment',
+                    name: '环境管理',
+                    component: './Environment',
+                  },
+                  {
+                    path: '/config/gconfig',
+                    name: '全局变量',
+                    component: './GConfig',
+                  },
+                ],
               },
+
               {
                 path: '/test-request',
                 name: '测试调试界面',

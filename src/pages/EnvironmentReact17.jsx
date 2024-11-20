@@ -7,13 +7,13 @@ import FormForModal from '@/components/PityForm/FormForModal';
 import fields from '@/consts/fields';
 import { listUsers } from '@/services/user';
 export default () => {
-  const [name, setName] = useState("");
   const [data, setData] = useState([]);
-  const [record, setRecord] = useState({id: 0});
   const [users, setUsers] = useState({});
+  const [pagination, setPagination] = useState({current: 1, pageSize: 8, total: 0});
+  const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [pagination, setPagination] = useState({current: 1, pageSize: 8, total: 0});
+  const [record, setRecord] = useState({id: 0});
   const getUsers = async () => {
     const user = await listUsers();
     const temp = {};

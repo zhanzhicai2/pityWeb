@@ -2,7 +2,7 @@ import request from "@/utils/request";
 import { CONFIG } from "@/consts/config";
 import auth from "@/utils/auth";
 
-
+// 环境配置
 export async function listEnvironment(params) {
   return request(`${CONFIG.URL}/config/environment/list`, {
     method: 'GET',
@@ -28,6 +28,30 @@ export async function deleteEnvironment(params) {
   return request(`${CONFIG.URL}/config/environment/delete`, {
     method: 'GET',
     params,
+    headers: auth.headers(),
+  });
+}
+
+// 全局变量
+export async function insertGConfig(params) {
+  return request(`${CONFIG.URL}/config/gconfig/insert`, {
+    method: 'POST',
+    data: params,
+    headers: auth.headers(),
+  });
+}
+// 获取gconfig列表
+export async function listGConfig(params) {
+  return request(`${CONFIG.URL}/config/gconfig/list`, {
+    method: 'GET',
+    params,
+    headers: auth.headers(),
+  });
+}
+export async function updateGConfig(params) {
+  return request(`${CONFIG.URL}/config/gconfig/update`, {
+    method: 'POST',
+    data: params,
     headers: auth.headers(),
   });
 }
