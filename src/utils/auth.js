@@ -1,4 +1,4 @@
-import { message } from 'antd';
+import {message} from 'antd';
 import {listUsers} from "@/services/user";
 
 export default {
@@ -8,13 +8,17 @@ export default {
     // const userRole = localStorage.getItem("pityUser")
     // const headers = { token,userRole };
     // const headers = { token};
-    const headers = { token };
+    const headers = {token};
     if (json) {
       headers['Content-Type'] = 'application/json';
     }
     return headers;
   },
   response: (res, info = false) => {
+    if (!res) {
+      message.error("网络开小差了，请稍后重试")
+      return false;
+    }
     if (res.code === 0) {
       if (info) {
         // message.info(res.msg);
@@ -32,10 +36,10 @@ export default {
     message.error(res.msg);
     return false;
   },
-  getUserMap: async () =>{
+  getUserMap: async () => {
     const user = await listUsers();
-    const temp ={};
-    user.forEach((item) =>{
+    const temp = {};
+    user.forEach((item) => {
       temp[item.id] = item.name
     });
     return temp

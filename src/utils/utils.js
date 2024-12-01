@@ -1,12 +1,10 @@
-import { parse } from 'querystring';
+import {parse} from 'querystring';
 /* eslint no-useless-escape:0 import/prefer-default-export:0 */
-
 // 添加进度条
-
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-export const process = async func =>{
+export const process = async func => {
   NProgress.start();
   await func();
   NProgress.done();
@@ -23,7 +21,7 @@ export const isAntDesignPro = () => {
 }; // 给官方演示站点用，用于关闭真实开发环境不需要使用的特性
 
 export const isAntDesignProOrDev = () => {
-  const { NODE_ENV } = process.env;
+  const {NODE_ENV} = process.env;
 
   if (NODE_ENV === 'development') {
     return true;

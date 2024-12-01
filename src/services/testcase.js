@@ -1,6 +1,14 @@
 import request from '@/utils/request';
-import { CONFIG } from '@/consts/config';
+import {CONFIG} from '@/consts/config';
 import auth from '@/utils/auth';
+
+export async function listTestCaseTree(params) {
+  return request(`${CONFIG.URL}/testcase/list`, {
+    method: 'GET',
+    params,
+    headers: auth.headers(),
+  });
+}
 
 export async function createTestCase(params) {
   return request(`${CONFIG.URL}/testcase/insert`, {
@@ -25,6 +33,7 @@ export async function queryTestCase(params) {
     headers: auth.headers(),
   });
 }
+
 export async function insertTestCaseAsserts(data) {
   return request(`${CONFIG.URL}/testcase/asserts/insert`, {
     method: 'POST',

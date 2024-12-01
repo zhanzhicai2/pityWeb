@@ -1,20 +1,21 @@
 import {
-  AlipayCircleOutlined,
+  AlipayCircleOutlined,GithubOutlined,
   LockOutlined,
-  MailOutlined,
   MobileOutlined,
   TaobaoCircleOutlined,
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
-import { Alert, Space, message, Tabs } from 'antd';
-import React, { useState } from 'react';
-import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { useIntl, connect, FormattedMessage } from 'umi';
-import { getFakeCaptcha } from '@/services/login';
+import {Alert, Space, Tabs} from 'antd';
+import React, {useState} from 'react';
+import ProForm, {ProFormCheckbox, ProFormText} from '@ant-design/pro-form';
+import {connect, FormattedMessage, useIntl} from 'umi';
 import styles from './index.less';
 
-const LoginMessage = ({ content }) => (
+const clientId = `Ov23liVwVosaCVRmkjg2`;
+const secret = `490e04ca7426209c0b43b4ae4884a70e01c7c785`;
+
+const LoginMessage = ({content}) => (
   <Alert
     style={{
       marginBottom: 24,
@@ -26,8 +27,8 @@ const LoginMessage = ({ content }) => (
 );
 
 const Login = (props) => {
-  const { userLogin = {}, submitting } = props;
-  const { status, type: loginType } = userLogin;
+  const {userLogin = {}, submitting} = props;
+  const {status, type: loginType} = userLogin;
   const [type, setType] = useState('account');
   const intl = useIntl();
 
@@ -40,18 +41,22 @@ const Login = (props) => {
   // };
   const handleSubmit = (values) => {
     const {dispatch} = props;
-    if (type === 'account'){
+    if (type === 'account') {
       dispatch({
-        type:'login/login',
-        payload:{username:values.username, password:values.password},
+        type: 'login/login',
+        payload: {username: values.username, password: values.password},
       });
-    }else {
+    } else {
       dispatch({
-        type:'login/register',
-        payload:{...values, setType},
+        type: 'login/register',
+        payload: {...values, setType},
       });
     }
   };
+  const redirectToGithub = () => {
+    const current = window.location.href
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}`
+  }
 
   return (
     <div className={styles.main}>
@@ -107,7 +112,7 @@ const Login = (props) => {
               name="username"
               fieldProps={{
                 size: 'large',
-                prefix: <UserOutlined className={styles.prefixIcon} />,
+                prefix: <UserOutlined className={styles.prefixIcon}/>,
               }}
               placeholder={intl.formatMessage({
                 id: 'pages.login.username.placeholder',
@@ -129,7 +134,7 @@ const Login = (props) => {
               name="password"
               fieldProps={{
                 size: 'large',
-                prefix: <LockOutlined className={styles.prefixIcon} />,
+                prefix: <LockOutlined className={styles.prefixIcon}/>,
               }}
               placeholder={intl.formatMessage({
                 id: 'pages.login.password.placeholder',
@@ -151,14 +156,14 @@ const Login = (props) => {
         )}
 
         {status === 'error' && loginType === 'mobile' && !submitting && (
-          <LoginMessage content="验证码错误" />
+          <LoginMessage content="验证码错误"/>
         )}
         {type === 'register' && (
           <>
             <ProFormText
               fieldProps={{
                 size: 'large',
-                prefix: <UserOutlined className={styles.prefixIcon} />,
+                prefix: <UserOutlined className={styles.prefixIcon}/>,
               }}
               name="username"
               placeholder="请输入用户名"
@@ -172,7 +177,7 @@ const Login = (props) => {
             <ProFormText
               fieldProps={{
                 size: 'large',
-                prefix: <MobileOutlined className={styles.prefixIcon} />,
+                prefix: <MobileOutlined className={styles.prefixIcon}/>,
               }}
               name="name"
               placeholder="请输入姓名"
@@ -186,7 +191,7 @@ const Login = (props) => {
             <ProFormText
               fieldProps={{
                 size: 'large',
-                prefix: <MobileOutlined className={styles.prefixIcon} />,
+                prefix: <MobileOutlined className={styles.prefixIcon}/>,
               }}
               name="email"
               placeholder="请输入用户邮箱"
@@ -200,7 +205,7 @@ const Login = (props) => {
             <ProFormText.Password
               fieldProps={{
                 size: 'large',
-                prefix: <LockOutlined className={styles.prefixIcon} />,
+                prefix: <LockOutlined className={styles.prefixIcon}/>,
                 type: 'password'
               }}
               name="password"
@@ -302,28 +307,29 @@ const Login = (props) => {
           }}
         >
           <ProFormCheckbox noStyle name="autoLogin">
-            <FormattedMessage id="pages.login.rememberMe" defaultMessage="自动登录" />
+            <FormattedMessage id="pages.login.rememberMe" defaultMessage="自动登录"/>
           </ProFormCheckbox>
           <a
             style={{
               float: 'right',
             }}
           >
-            <FormattedMessage id="pages.login.forgotPassword" defaultMessage="忘记密码" />
+            <FormattedMessage id="pages.login.forgotPassword" defaultMessage="忘记密码"/>
           </a>
         </div>
       </ProForm>
       <Space className={styles.other}>
-        <FormattedMessage id="pages.login.loginWith" defaultMessage="其他登录方式" />
-        <AlipayCircleOutlined className={styles.icon} />
-        <TaobaoCircleOutlined className={styles.icon} />
-        <WeiboCircleOutlined className={styles.icon} />
+        <FormattedMessage id="pages.login.loginWith" defaultMessage="其他登录方式"/>
+        {/*<AlipayCircleOutlined className={styles.icon}/>*/}
+        {/*<TaobaoCircleOutlined className={styles.icon}/>*/}
+        {/*<WeiboCircleOutlined className={styles.icon}/>*/}
+        <GithubOutlined className={styles.icon} onClick={redirectToGithub}/>
       </Space>
     </div>
   );
 };
 
-export default connect(({ login, loading }) => ({
+export default connect(({login, loading}) => ({
   userLogin: login,
   submitting: loading.effects['login/login'],
 }))(Login);

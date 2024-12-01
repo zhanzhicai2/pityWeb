@@ -10,6 +10,7 @@ export async function queryCurrent() {
 export async function queryNotices() {
   return request('/api/notices');
 }
+
 export async function listUsers(params) {
   const res = await request(`${CONFIG.URL}/auth/listUser`, {
     method: 'GET',
@@ -20,4 +21,14 @@ export async function listUsers(params) {
     return res.data;
   }
   return [];
+}
+export async function loginGithub(params){
+  return await request(`${CONFIG.URL}/auth/github/login`,{
+    method: 'GET',
+    params,
+    headers:auth.headers(),
+  })
+}
+export async function getGithubUser(params){
+
 }

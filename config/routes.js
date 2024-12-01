@@ -31,13 +31,15 @@ export default [
               {
                 path: '/request',
                 name: '调试界面',
-                icon: 'rocket',
+                // icon: 'rocket',
+                icon: 'icon-icon_aside_bug',
                 component: './Request'
               },
               {
                 path: '/project',
                 name:'项目列表',
-                icon: 'book',
+                // icon: 'book',
+                icon: 'icon-Project',
                 component: './Project/Project',
               },
               {
@@ -47,7 +49,8 @@ export default [
               },
               {
                 path: '/config',
-                icon: 'rocket',
+                // icon: 'rocket',
+                icon: 'icon-config',
                 name: '配置中心',
                 routes: [
                   {

@@ -40,21 +40,24 @@ const defaultFooterDom = (
     copyright={`${new Date().getFullYear()} woody个人出品`}
     links={[
       {
-        key: 'Ant Design Pro',
-        title: 'Ant Design Pro',
-        href: 'https://pro.ant.design',
+        key: 'Pity Web',
+        title: 'Pity Web',
+        // href: 'https://pro.ant.design',
+        href:'http://127.0.0.1:8010/user/login',
         blankTarget: true,
       },
       {
         key: 'github',
         title: <GithubOutlined />,
         href: 'https://github.com/ant-design/ant-design-pro',
+        // href: 'https://github.com/wuranxu/pityWeb',
         blankTarget: true,
       },
       {
-        key: 'Ant Design',
-        title: 'Ant Design',
+        key: 'Pity',
+        title: 'Pity',
         href: 'https://ant.design',
+        // href: 'https://github.com/wuranxu/pity',
         blankTarget: true,
       },
     ]}
@@ -100,7 +103,7 @@ const BasicLayout = (props) => {
   return (
     <ProLayout
       logo={logo}
-      layout='top'
+      // layout='top'
       SiderMenuProps={{mode: 'horizontal'}}
       formatMessage={formatMessage}
       {...props}
@@ -148,6 +151,9 @@ const BasicLayout = (props) => {
         menuDataRef.current = menuData || [];
         return menuData || [];
       }}
+      // iconfontUrl="//at.alicdn.com/t/font_915840_xhupy1nll7.js"
+      iconfontUrl="//at.alicdn.com/t/font_915840_2ne958vidtk.js"
+      layout='top'  // 上中下顶部布局，取消就是左右布局
     >
       <Authorized authority={authorized.authority} noMatch={noMatch}>
         {children}

@@ -1,36 +1,23 @@
-import React, { useState } from 'react';
-import {
-  Card,
-  Col,
-  Row,
-  Input,
-  Select,
-  Button,
-  Tabs,
-  Table,
-  notification,
-  Radio,
-  Dropdown,
-  Menu,
-} from 'antd';
-import { DownOutlined, SendOutlined, DeleteTwoTone } from '@ant-design/icons';
+import React, {useState} from 'react';
+import {Button, Card, Col, Dropdown, Input, Menu, notification, Radio, Row, Select, Table, Tabs,} from 'antd';
+import {DeleteTwoTone, DownOutlined, EditTwoTone, SendOutlined} from '@ant-design/icons';
 import EditableTable from '@/components/Table/EditableTable';
 import CodeEditor from '@/components/Postman/CodeEditor';
-import { httpRequest } from '@/services/request';
+import {httpRequest} from '@/services/request';
 import auth from "@/utils/auth";
 
-const { Option } = Select;
-const { TabPane } = Tabs;
+const {Option} = Select;
+const {TabPane} = Tabs;
 
 const STATUS = {
-  200: { color: '#67C23A', text: 'OK' },
-  401: { color: '#F56C6C', text: 'unauthorized' },
-  400: { color: '#F56C6C', text: 'Bad Request' },
+  200: {color: '#67C23A', text: 'OK'},
+  401: {color: '#F56C6C', text: 'unauthorized'},
+  400: {color: '#F56C6C', text: 'Bad Request'},
 };
 
 const tabExtra = (response) => {
   return response && response.response ? (
-    <div style={{ marginRight: 16 }}>
+    <div style={{marginRight: 16}}>
       <span>
         Status:
         <span
@@ -43,8 +30,8 @@ const tabExtra = (response) => {
           {response.status_code}{' '}
           {STATUS[response.status_code] ? STATUS[response.status_code].text : ''}
         </span>
-        <span style={{ marginLeft: 8, marginRight: 8 }}>
-          Time: <span style={{ color: '#67C23A' }}>{response.elapsed}</span>
+        <span style={{marginLeft: 8, marginRight: 8}}>
+          Time: <span style={{color: '#67C23A'}}>{response.elapsed}</span>
         </span>
       </span>
     </div>
@@ -70,7 +57,7 @@ export default () => {
     <Select
       value={method}
       onChange={(data) => setMethod(data)}
-      style={{ width: 120, fontSize: 16, textAlign: 'left' }}
+      style={{width: 120, fontSize: 16, textAlign: 'left'}}
     >
       <Option value="GET">GET</Option>
       <Option value="POST">POST</Option>
@@ -130,7 +117,7 @@ export default () => {
         const [key, value] = item.split('=');
         const now = Date.now();
         keys.push(now + idx + 10);
-        newParams.push({ key, value, id: now + idx + 10, description: '' });
+        newParams.push({key, value, id: now + idx + 10, description: ''});
       });
       setParamsData(newParams);
       setEditableRowKeys(keys);
@@ -172,7 +159,7 @@ export default () => {
     }
     const res = await httpRequest(params);
     setLoading(false);
-    if(auth.response(res,true)){
+    if (auth.response(res, true)) {
       setResponse(res.data);
     }
   };
@@ -242,17 +229,17 @@ export default () => {
     return [
       {
         title: 'KEY',
-        Key:'key',
+        Key: 'key',
         dataIndex: 'key',
       },
       {
         title: 'VALUE',
-        Key:'value',
+        Key: 'value',
         dataIndex: 'value',
       },
       {
         title: 'DESCRIPTION',
-        Key:'description',
+        Key: 'description',
         dataIndex: 'description',
       },
       {
@@ -261,8 +248,15 @@ export default () => {
         render: (text, record) => {
           return (
             <>
+              <EditTwoTone
+                style={{cursor: 'pointer'}}
+                onClick={() => {
+                  console.log(editableKeys);
+                  setEditableRowKeys((record.id))
+                }}
+              />
               <DeleteTwoTone
-                style={{ cursor: 'pointer', marginLeft: 8 }}
+                style={{cursor: 'pointer', marginLeft: 8}}
                 onClick={() => {
                   onDelete(columnType, record.id);
                 }}
@@ -276,7 +270,7 @@ export default () => {
   };
 
   return (
-    <Card>
+    <Card title="在线调试HTTP请求">
       <Row gutter={[8, 8]}>
         <Col span={18}>
           <Input
@@ -296,15 +290,15 @@ export default () => {
             loading={loading}
             type="primary"
             size="large"
-            style={{ marginRight: 16, float: 'right' }}
+            style={{marginRight: 16, float: 'right'}}
           >
-            <SendOutlined />
+            <SendOutlined/>
             Send{' '}
           </Button>
         </Col>
       </Row>
-      <Row style={{ marginTop: 8 }}>
-        <Tabs defaultActiveKey="1" style={{ width: '100%' }}>
+      <Row style={{marginTop: 8}}>
+        <Tabs defaultActiveKey="1" style={{width: '100%'}}>
           <TabPane tab="Params" key="1">
             <EditableTable
               columns={columns('params')}
@@ -341,39 +335,41 @@ export default () => {
                 <Radio value="GraphQL">GraphQL</Radio>
               </Radio.Group>
               {bodyType === 'raw' ? (
-                <Dropdown style={{ marginLeft: 8 }} overlay={menu} trigger={['click']}>
+                <Dropdown style={{marginLeft: 8}} overlay={menu} trigger={['click']}>
                   <a onClick={(e) => e.preventDefault()}>
-                    {rawType} <DownOutlined />
+                    {rawType} <DownOutlined/>
                   </a>
                 </Dropdown>
               ) : null}
             </Row>
             {bodyType !== 'none' ? (
-              <Row style={{ marginTop: 12 }}>
+              <Row style={{marginTop: 12}}>
                 <Col span={24}>
-                  <Card bodyStyle={{ padding: 0 }}>
+                  <Card bodyStyle={{padding: 0}}>
                     {/*<CodeEditor value={body} setValue={setBody} height="20vh" />*/}
-                    <CodeEditor value={body} onChange={e => setBody(e)} height="20vh" />
+                    <CodeEditor value={body} onChange={e => setBody(e)} height="20vh"/>
                   </Card>
                 </Col>
               </Row>
             ) : (
-              <div style={{ height: '20vh', lineHeight: '20vh', textAlign: 'center' }}>
+              <div style={{height: '20vh', lineHeight: '20vh', textAlign: 'center'}}>
                 This request does not have a body
               </div>
             )}
           </TabPane>
         </Tabs>
       </Row>
-      <Row gutter={[8, 8]} >
-        <div style={{ height: '2vh', lineHeight: '2vh', textAlign: 'center' }}>
+      <Row gutter={[8, 8]}>
+        <div style={{height: '2vh', lineHeight: '2vh', textAlign: 'center'}}>
           Response
         </div>
         {Object.keys(response).length === 0 ? null : (
-          <Tabs style={{ width: '100%' }} tabBarExtraContent={tabExtra(response)}>
+          <Tabs style={{width: '100%'}} tabBarExtraContent={tabExtra(response)}>
             <TabPane tab="Body" key="1">
               <CodeEditor
-                value={response.response ? JSON.stringify(response.response, null, 2) : ''}
+                // value={response.response ? JSON.stringify(response.response, null, 2) : ''}
+                language={response.response && typeof response.response === 'object' ? 'json' : 'text'}
+                value={response.response && typeof response.response === 'object' ? JSON.stringify(response.response, null, 2) : response.response || ''}
                 height="70vh"
               />
             </TabPane>

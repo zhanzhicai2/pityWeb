@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {Col, Empty, Input, Row, Select, Spin, Tooltip, Tree} from 'antd';
 
-const { TreeNode } = Tree;
-const { Option } = Select;
+const {TreeNode} = Tree;
+const {Option} = Select;
 
 export default (props) => {
 
@@ -44,15 +44,23 @@ export default (props) => {
     return props.searchValue !== '' && index > -1 ? (
       <span>
           {<span>{beforeStr}</span>}
-        <span style={{ color: '#f50' }}>{title.substr(index, props.searchValue.length)}</span>
+        <span style={{color: '#f50'}}>{title.substr(index, props.searchValue.length)}</span>
         {afterStr} {key === currentKey ? suffix : null}
         </span>
-    ) : <span onMouseLeave={() => setCurrentKey(null)}
-              // onMouseEnter={() => setCurrentKey(key)}><Tooltip
-      // title={title}>{title.length > 16 ? `${title.slice(0, 16)  }...` : title} {key === currentKey ? suffix : null}</Tooltip></span>;
-              onMouseEnter={() => setCurrentKey(key)}>
-      <Tooltip title={title}>{title.length > 16 ? `${title.slice(0, 16)  }...` : title}
+    // ) : <span onMouseLeave={() => setCurrentKey(null)}
+    //   // onMouseEnter={() => setCurrentKey(key)}><Tooltip
+    //   // title={title}>{title.length > 16 ? `${title.slice(0, 16)  }...` : title} {key === currentKey ? suffix : null}</Tooltip></span>;
+    //           onMouseEnter={() => setCurrentKey(key)}>
+    //   <Tooltip title={title}>{title.length > 16 ? `${title.slice(0, 16)}...` : title}
+    //     {key === currentKey ? suffix : null} {props.parseStatus(key)}</Tooltip></span>;
+    ) : <span onMouseLeave={() => {
+      setTimeout(() => {
+        setCurrentKey(null)
+      }, 10000)
+    }} onMouseEnter={() => setCurrentKey(key)}>
+      <Tooltip title={title}>{title.length > 16 ? `${title.slice(0, 16)}...` : title}
         {key === currentKey ? suffix : null} {props.parseStatus(key)}</Tooltip></span>;
+
   };
 
   const parseDirectory = (key, title, requestType) => {
@@ -63,13 +71,13 @@ export default (props) => {
     return props.searchValue !== '' && index > -1 ? (
       <span>
           {<span>{beforeStr}</span>}
-        <span style={{ color: '#f50' }}>{title.substr(index, props.searchValue.length)}</span>
+        <span style={{color: '#f50'}}>{title.substr(index, props.searchValue.length)}</span>
         {afterStr}
         </span>
     ) : <span><Tooltip title={title}>{requestType !== undefined ? requestType === 0 ?
-      <a style={{ color: '#DEB946' }}>RPC</a>
-      : <a style={{ color: '#f540c9' }}>MSG</a> : null
-    } {title.length > 16 ? `${title.slice(0, 16)  }...` : title}</Tooltip></span>;
+      <a style={{color: '#DEB946'}}>RPC</a>
+      : <a style={{color: '#f540c9'}}>MSG</a> : null
+    } {title.length > 16 ? `${title.slice(0, 16)}...` : title}</Tooltip></span>;
   };
 
   const onChange = e => {
@@ -77,7 +85,7 @@ export default (props) => {
       props.onChange(e);
       return;
     }
-    const { value } = e.target;
+    const {value} = e.target;
     dataList = [];
     generateList(props.gData);
     const expKeys = dataList.map(item => {
@@ -101,7 +109,7 @@ export default (props) => {
   const generateList = data => {
     for (let i = 0; i < data.length; i++) {
       const node = data[i];
-      const { key } = node;
+      const {key} = node;
       dataList.push({
         key,
         title: node.title,
@@ -113,7 +121,6 @@ export default (props) => {
   };
 
 
-
   useEffect(() => {
     generateList(props.gData);
   }, []);
@@ -123,7 +130,12 @@ export default (props) => {
       return (
         <TreeNode key={item.key} icon={props.iconMap(item.key)}
                   title={<span
-                    onMouseLeave={() => setCurrentKey(null)}
+                    // onMouseLeave={() => setCurrentKey(null)}
+                    onMouseLeave={() => {
+                      setTimeout(() => {
+                        setCurrentKey(null)
+                      }, 100)
+                    }}
                     onMouseEnter={() => setCurrentKey(item.key)}>
                     {parseDirectory(item.key, item.title, item.requestType)} ({item.total})
                     {item.key === currentKey ? props.suffixMap(item) : null}</span>
@@ -133,15 +145,15 @@ export default (props) => {
       );
     }
     return <TreeNode key={item.key} icon={props.iconMap(item.key)} onMouseEnter={() => setCurrentKey(item.key)}
-                     title={parseTitle(item.key, item.title, props.suffixMap(item))} />;
+                     title={parseTitle(item.key, item.title, props.suffixMap(item))}/>;
   });
 
   return (
     <Spin spinning={props.loading ? props.loading : false}>
-      <Row style={{ padding: 8, marginBottom: 4 }}>
+      <Row style={{padding: 8, marginBottom: 4}}>
         <Col span={22}>
-          <Input placeholder='请输入用例名称' style={{ width: '100%' }} onChange={onChange} size='small'
-                 enterButton={false} allowClear value={props.searchValue} />
+          <Input placeholder='请输入用例名称' style={{width: '100%'}} onChange={onChange} size='small'
+                 enterButton={false} allowClear value={props.searchValue}/>
         </Col>
         <Col span={2}>
           {props.AddButton}
@@ -164,7 +176,7 @@ export default (props) => {
           defaultExpandParent
         >
           {loop(props.gData)}
-        </Tree>: <Empty/>
+        </Tree> : <Empty/>
       }
     </Spin>
   );
