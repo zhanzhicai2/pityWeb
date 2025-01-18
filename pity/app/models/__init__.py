@@ -5,6 +5,7 @@
 # db = SQLAlchemy(pity)
 # migrate = Migrate(pity, db)
 # pity.app_context().push()
+import time
 from datetime import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
@@ -98,7 +99,17 @@ class DatabaseHelper(object):
 
     @staticmethod
     def delete_model(dist, update_user):
-        dist.deleted_at = datetime.now()
+        # dist.deleted_at = datetime.now()
+        """
+                删除数据，兼容老的deleted_at
+                :param dist:
+                :param update_user:
+                :return:
+                """
+        if str(dist.__class__.deleted_at.property.columns[0].type) == "DATETIME":
+            dist.deleted_at = datetime.now()
+        else:
+            dist.deleted_at = time.time()
         dist.updated_at = datetime.now()
         dist.update_user = update_user
 

@@ -611,3 +611,100 @@ WHERE pity_report.id = %s]
 [2024-12-25 15:00:51.419920] ERROR: UserDao: 新增初始化数据: fat失败, 初始化数据: fat已存在
 [2024-12-25 15:01:48.378164] ERROR: UserDao: 新增初始化数据: fat失败, 初始化数据: fat已存在
 [2024-12-25 15:01:57.324368] ERROR: UserDao: 新增初始化数据: fat失败, 初始化数据: fat已存在
+[2024-12-25 15:58:10.478263] ERROR: UserDao: 执行用例失败: __init__() got an unexpected keyword argument 'cookies_jar'
+[2025-01-08 13:51:28.279232] ERROR: UserDao: 新增初始化数据: fat67失败, 初始化数据: fat67已存在
+[2025-01-08 14:49:48.859877] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-08 14:49:48.860837] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-08 14:49:52.649927] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-08 14:49:52.650031] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-08 14:49:54.001001] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-08 14:49:54.001116] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-08 15:10:04.024426] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-08 15:10:04.025516] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-08 23:16:37.227390] ERROR: UserDao: 编辑用例断言失败, error: (pymysql.err.DataError) (1406, "Data too long for column 'assert_type' at row 1")
+[SQL: UPDATE pity_testcase_asserts SET name=%s, assert_type=%s, expected=%s, actually=%s, updated_at=%s WHERE pity_testcase_asserts.id = %s]
+[parameters: ('1', 'not_equal', '2', '1', datetime.datetime(2025, 1, 8, 23, 16, 37, 211916), 3)]
+(Background on this error at: http://sqlalche.me/e/14/9h9h)
+[2025-01-08 23:16:39.670122] ERROR: UserDao: 编辑用例断言失败, error: (pymysql.err.DataError) (1406, "Data too long for column 'assert_type' at row 1")
+[SQL: UPDATE pity_testcase_asserts SET name=%s, assert_type=%s, expected=%s, actually=%s, updated_at=%s WHERE pity_testcase_asserts.id = %s]
+[parameters: ('1', 'not_equal', '2', '1', datetime.datetime(2025, 1, 8, 23, 16, 39, 667589), 3)]
+(Background on this error at: http://sqlalche.me/e/14/9h9h)
+[2025-01-08 23:39:54.319883] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-08 23:39:54.320529] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-08 23:42:01.473220] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-08 23:42:01.473788] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-08 23:42:06.263920] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-08 23:42:06.264019] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-08 23:44:28.559735] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-08 23:44:28.560702] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-09 07:14:05.855766] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-09 07:14:05.873636] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-09 07:14:47.753583] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-09 07:14:47.753754] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-14 15:27:01.357487] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:27:14.886563] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:29:06.750521] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:29:08.999278] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:29:10.128582] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:29:13.199157] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:29:14.799672] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:29:18.263534] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:29:19.661367] ERROR: UserDao: 新增用例断言失败: app.models.testcase_asserts.TestCaseAsserts() argument after ** must be a mapping, not method
+[2025-01-14 15:30:53.709233] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-14 15:30:53.709389] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-14 15:30:57.885355] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-14 15:30:57.885477] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-14 15:31:00.570344] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-14 15:31:00.570492] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-14 15:37:47.347630] ERROR: UserDao: 查询用例失败: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query ([Errno 32] Broken pipe)')
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-14 15:39:16.095210] ERROR: UserDao: 查询全局变量失败, error: expected string or bytes-like object
+[2025-01-14 15:39:16.099824] ERROR: UserDao: 执行用例失败: expected string or bytes-like object
+[2025-01-17 16:05:35.117115] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-17 16:05:47.340735] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-17 16:05:47.409501] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-17 16:06:31.404980] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-17 16:08:57.138673] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-18 14:21:48.141701] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-18 14:32:33.183976] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-18 14:38:31.880842] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
