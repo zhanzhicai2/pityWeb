@@ -708,3 +708,105 @@ FROM pity_testcase
 WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
 [parameters: (8, 10)]
 (Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-18 17:14:23.288684] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-18 17:14:26.991107] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s) ORDER BY pity_testcase.name ASC]
+[parameters: (9,)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-18 17:14:40.758647] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s) ORDER BY pity_testcase.name ASC]
+[parameters: (9,)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-18 17:14:40.830134] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-19 12:51:13.843372] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-19 12:51:34.331532] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-19 12:51:34.426879] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-19 12:51:47.427819] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-19 13:05:35.646204] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s) ORDER BY pity_testcase.name ASC]
+[parameters: (9,)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-19 13:07:44.047110] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s) ORDER BY pity_testcase.name ASC]
+[parameters: (9,)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-19 13:07:44.225507] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s, %s) ORDER BY pity_testcase.name ASC]
+[parameters: (8, 10)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-01-19 13:07:57.870263] ERROR: UserDao: 获取测试用例失败: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_testcase.case_type' in 'field list'")
+[SQL: SELECT pity_testcase.id, pity_testcase.name, pity_testcase.request_type, pity_testcase.url, pity_testcase.request_method, pity_testcase.request_headers, pity_testcase.body, pity_testcase.directory_id, pity_testcase.tag, pity_testcase.`status`, pity_testcase.priority, pity_testcase.case_type, pity_testcase.created_at, pity_testcase.updated_at, pity_testcase.deleted_at, pity_testcase.create_user, pity_testcase.update_user 
+FROM pity_testcase 
+WHERE pity_testcase.deleted_at IS NULL AND pity_testcase.directory_id IN (%s) ORDER BY pity_testcase.name ASC]
+[parameters: (9,)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-03-06 01:44:50.348612] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 01:45:17.051318] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 01:46:14.327809] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 03:21:35.314978] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 03:22:41.158843] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 03:22:43.657784] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 16:11:41.374795] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 16:11:53.689291] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 16:11:56.433825] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 16:12:28.674010] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 16:12:30.797761] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 16:12:33.025907] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 17:35:54.826586] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 17:44:35.956267] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 17:44:38.700336] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 17:44:40.850046] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 17:45:52.324859] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 17:45:53.493904] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 17:45:54.514017] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-06 17:45:55.346934] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-07 19:50:13.310843] ERROR: UserDao: 获取<class 'app.models.redis_config.PityRedis'>列表失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-07 19:50:19.428622] ERROR: UserDao: 获取<class 'app.models.redis_config.PityRedis'>列表失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-07 19:50:39.013098] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-07 19:53:29.192483] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-07 19:53:30.610007] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-07 19:53:31.547353] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-07 20:37:06.657575] ERROR: UserDao: 查询<class 'app.models.redis_config.PityRedis'>失败, error: type object 'PityRedis' has no attribute 'deteted_at'
+[2025-03-07 20:56:18.880932] ERROR: UserDao: 添加<class 'app.models.redis_config.PityRedis'>记录失败, error: object method can't be used in 'await' expression
+[2025-03-07 21:01:48.982150] ERROR: UserDao: 添加<class 'app.models.redis_config.PityRedis'>记录失败, error: object method can't be used in 'await' expression
+[2025-03-08 23:46:32.360151] ERROR: UserDao: 新增测试数据失败, error: Column expression or FROM clause expected, got <class 'app.dao.test_case.TestcaseDataDao.PityTestcaseDataDao'>.

@@ -5,31 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c72a3621-16d1-42fa-bbb5-b40dfa541e7f" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/app/dao/test_case/TestcaseDataDao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/basic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/schema/testcase_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/testcase_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/json_compare.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/versions/4fb3f1ff2664_test202502.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/versions/77c83c29102f_数据驱动.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/versions/85f792493451_test20250302.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/versions/8b874b450094_test20250304.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/case_constructor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/constructor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/redis_constructor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/sql_constructor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dao/config/RedisConfigDao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dao/test_case/TestPlan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/excpetions/RedisException.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/middleware/PityRedisManager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/middleware/Scheduler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/redis_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/schema/online_redis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/schema/redis_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/schema/test_plan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/schema/wechat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/test_plan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routers/config/redis_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routers/testcase/testplan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/scheduler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dao/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/config/DbConfigDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/config/DbConfigDao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/config/EnvironmentDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/config/EnvironmentDao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/test_case/ConstructorDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/ConstructorDao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestCaseAssertsDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestCaseAssertsDao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestCaseDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestCaseDao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestCaseDirectory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestCaseDirectory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestResult.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestResult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestReport.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestReport.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/handler/fatcory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/handler/fatcory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/middleware/AsyncHttpClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/middleware/AsyncHttpClient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/result.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/test_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/test_case_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/testcase_directory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/testcase_asserts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/testcase_asserts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/report.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/config/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/request/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/request/http.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/testcase/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/testcase/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/testcase/testcase.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/testcase/testcase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/testcase/testcase_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/testcase/testcase_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/testcase/testcase_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/schema/testcase_schema.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/utils/decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/decorator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gunicorn.py" beforeDir="false" afterPath="$PROJECT_DIR$/gunicorn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/pity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/pity.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +124,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/core" />
+      <recent name="$PROJECT_DIR$/app/models/schema" />
       <recent name="$PROJECT_DIR$/app/controllers/auth" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/dao" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -280,7 +302,9 @@
       <workItem from="1725497367459" duration="416000" />
       <workItem from="1731370482265" duration="135341000" />
       <workItem from="1734073680215" duration="6714000" />
-      <workItem from="1734422017354" duration="62082000" />
+      <workItem from="1734422017354" duration="64693000" />
+      <workItem from="1738589088535" duration="185000" />
+      <workItem from="1738999356334" duration="75862000" />
     </task>
     <task id="LOCAL-00001" summary="修复git练习">
       <created>1724218314075</created>
@@ -485,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735016106879</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="新增断言和造数据">
+      <created>1737260845381</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1737260845381</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,408 +562,13 @@
     <MESSAGE value="新增断言和造数据" />
     <option name="LAST_COMMIT_MESSAGE" value="新增断言和造数据" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/request/http.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/request/http.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/request/http.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/request/http.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/request/http.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/request/http.py</url>
-          <line>14</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/request/http.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/decorator.py</url>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/middleware/Jwt.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>14</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>68</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectRoleDao.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="132" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>62</line>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>61</line>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="138" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>73</line>
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>76</line>
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="145" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="146" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/project/project.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/controllers/testcase/testcase.py</url>
-          <line>66</line>
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/test_case/TestCaseDao.py</url>
-          <line>77</line>
-          <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/test_case/TestCaseDao.py</url>
-          <line>81</line>
-          <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/auth/UserDao.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="165" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/auth/UserDao.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="166" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/config/gconfig.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="167" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/config/gconfig.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/config/gconfig.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/models/schema/gconfig.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="174" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/models/schema/gconfig.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/gconfig_parser.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="177" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/gconfig_parser.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="178" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/gconfig_parser.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="179" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/gconfig_parser.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="182" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/gconfig_parser.py</url>
-          <line>77</line>
-          <option name="timeStamp" value="183" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/gconfig_parser.py</url>
-          <line>81</line>
-          <option name="timeStamp" value="186" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/request/http.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="187" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/request/http.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="188" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/request/http_schema.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="190" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/executor.py</url>
-          <line>270</line>
-          <option name="timeStamp" value="193" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/executor.py</url>
-          <line>274</line>
-          <option name="timeStamp" value="194" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/executor.py</url>
-          <line>276</line>
-          <option name="timeStamp" value="195" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/middleware/HttpClient.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="197" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/config/DbConfigDao.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="198" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/config/DbConfigDao.py</url>
-          <line>53</line>
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/config/DbConfigDao.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/testjson.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="201" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/testjson.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="202" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/testjson.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="203" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/testjson.py</url>
-          <line>108</line>
-          <option name="timeStamp" value="205" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/testjson.py</url>
-          <line>109</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="219" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/executor.py</url>
-          <line>196</line>
-          <option name="timeStamp" value="220" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/executor.py</url>
-          <line>211</line>
-          <option name="timeStamp" value="221" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pity$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1724528526707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
     <SUITE FILE_PATH="coverage/pity$gconfig_parser.coverage" NAME="gconfig_parser 覆盖结果" MODIFIED="1732614537657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />
     <SUITE FILE_PATH="coverage/pity$testjson.coverage" NAME="testjson 覆盖结果" MODIFIED="1733810827634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pity$pity.coverage" NAME="pity 覆盖结果" MODIFIED="1731573079485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pity$app.coverage" NAME="run 覆盖结果" MODIFIED="1724362217649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pity$main.coverage" NAME="main 覆盖结果" MODIFIED="1737101378547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$main.coverage" NAME="main 覆盖结果" MODIFIED="1741428393911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pity$run.coverage" NAME="run 覆盖结果" MODIFIED="1734072616607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pity$config.coverage" NAME="config 覆盖结果" MODIFIED="1724058835991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
