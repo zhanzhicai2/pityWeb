@@ -7,6 +7,8 @@
 # pity.app_context().push()
 import time
 from datetime import datetime
+from typing import List
+
 from sqlalchemy import create_engine
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.ext.declarative import declarative_base
@@ -93,9 +95,9 @@ class DatabaseHelper(object):
                     setattr(dist, var, value)
             else:
                 setattr(dist, var, value)
-            if update_user:
-                setattr(dist, 'update_user', update_user)
-            setattr(dist, 'updated_at', datetime.now())
+        if update_user:
+            setattr(dist, 'update_user', update_user)
+        setattr(dist, 'updated_at', datetime.now())
 
     @staticmethod
     def delete_model(dist, update_user):
@@ -113,6 +115,42 @@ class DatabaseHelper(object):
         dist.updated_at = datetime.now()
         dist.update_user = update_user
 
+    # 改进多条查询
+    @classmethod
+    def where(cls, param, sentence, condition: List):
+        if param is None:
+            return cls
+        if isinstance(param, bool):
+            condition.append(sentence)
+            return cls
+        if param:
+            condition.append(sentence)
+        return cls
+
+    # 分页
+    @staticmethod
+    async def pagination(page: int, size: int, session, sql):
+        """
+        分页查询
+        :param session:
+        :param page:
+        :param size:
+        :param sql:
+        :return:
+        """
+        data = await session.execute(sql)
+        total = data.raw.rowcount
+        if total == 0:
+            return [], 0
+        sql = sql.offset((page - 1) * size).limit(size)
+        data = await session.execute(sql)
+        return data.scalars().all(), total
+
+    @staticmethod
+    def like(s: str):
+        if s:
+            return f"%{s}%"
+        return s
+
 
 db_helper = DatabaseHelper()
-

@@ -4,53 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c72a3621-16d1-42fa-bbb5-b40dfa541e7f" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/alembic/versions/4fb3f1ff2664_test202502.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alembic/versions/77c83c29102f_数据驱动.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alembic/versions/85f792493451_test20250302.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alembic/versions/8b874b450094_test20250304.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/case_constructor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/constructor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/redis_constructor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/sql_constructor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/config/RedisConfigDao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/test_case/TestPlan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/excpetions/RedisException.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/middleware/PityRedisManager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/middleware/Scheduler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/redis_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/schema/online_redis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/schema/redis_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/schema/test_plan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/schema/wechat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/test_plan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/config/redis_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/testcase/testplan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/scheduler.py" afterDir="false" />
+    <list default="true" id="c72a3621-16d1-42fa-bbb5-b40dfa541e7f" name="更改" comment="新增python脚本作为前置条件，切勿滥用">
+      <change afterPath="$PROJECT_DIR$/app/core/constructor/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/constructor/python_constructor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/schema/script.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routers/online/script.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/case_constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/case_constructor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/constructor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/redis_constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/redis_constructor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/sql_constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/sql_constructor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dao/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/test_case/ConstructorDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/ConstructorDao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestCaseAssertsDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestCaseAssertsDao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestCaseDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestCaseDao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestCaseDirectory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestCaseDirectory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/test_case/TestReport.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/test_case/TestReport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/handler/fatcory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/handler/fatcory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/report.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/constructor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/project_role.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/project_role.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/online/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/online/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/request/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/request/http.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/testcase/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/testcase/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/testcase/testcase.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/testcase/testcase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/testcase/testcase_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/schema/testcase_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/decorator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/scheduler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gunicorn.py" beforeDir="false" afterPath="$PROJECT_DIR$/gunicorn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/pity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/pity.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/记录信息" beforeDir="false" afterPath="$PROJECT_DIR$/test/记录信息" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -88,6 +62,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2krzFaTTD06x2nkvaEct8BzcqME" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -96,66 +76,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/zhicaizhan/Desktop/py/wuranxu/pity/statics&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.main.executor": "Run",
+    "Python.testcase.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fastapimain",
+    "last_opened_file_path": "/Users/zhicaizhan/Desktop/py/wuranxu/pity/statics",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.idesettings.debugger.python",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="mySupportQtDebugging" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/statics" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/core/constructor" />
       <recent name="$PROJECT_DIR$/app/core" />
       <recent name="$PROJECT_DIR$/app/models/schema" />
       <recent name="$PROJECT_DIR$/app/controllers/auth" />
       <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/dao" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pity" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/models" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/models/__init__.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="gconfig_parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pity" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -178,6 +147,7 @@
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pity" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -200,6 +170,7 @@
     </configuration>
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pity" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -225,8 +196,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="testcase" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/routers/testcase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/routers/testcase/testcase.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="testjson" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pity" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -252,6 +247,7 @@
       <module name="pity" />
       <option name="target" value="$PROJECT_DIR$/main.py" />
       <option name="targetType" value="PATH" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
@@ -272,19 +268,27 @@
       <item itemvalue="Flask 服务器.pity" />
       <item itemvalue="Python.gconfig_parser" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.testjson" />
-      <item itemvalue="Python.__init__" />
       <item itemvalue="Python.run" />
+      <item itemvalue="Python.testcase" />
+      <item itemvalue="Python.testjson" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.testcase" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python.testjson" />
         <item itemvalue="Python.gconfig_parser" />
-        <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
+        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -304,7 +308,16 @@
       <workItem from="1734073680215" duration="6714000" />
       <workItem from="1734422017354" duration="64693000" />
       <workItem from="1738589088535" duration="185000" />
-      <workItem from="1738999356334" duration="75862000" />
+      <workItem from="1738999356334" duration="79277000" />
+      <workItem from="1741623946696" duration="715000" />
+      <workItem from="1741625136862" duration="32000" />
+      <workItem from="1741625287486" duration="625000" />
+      <workItem from="1741626053437" duration="27000" />
+      <workItem from="1741626172110" duration="429000" />
+      <workItem from="1741626925143" duration="27836000" />
+      <workItem from="1741720276140" duration="16000" />
+      <workItem from="1741769351430" duration="33915000" />
+      <workItem from="1742983878577" duration="40166000" />
     </task>
     <task id="LOCAL-00001" summary="修复git练习">
       <created>1724218314075</created>
@@ -516,7 +529,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737260845381</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="新增python脚本作为前置条件，切勿滥用">
+      <option name="closed" value="true" />
+      <created>1743248426452</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1743248426452</updated>
+    </task>
+    <task id="LOCAL-00032" summary="新增python脚本作为前置条件，切勿滥用">
+      <option name="closed" value="true" />
+      <created>1743248899610</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1743248899610</updated>
+    </task>
+    <task id="LOCAL-00033" summary="新增python脚本作为前置条件，切勿滥用">
+      <option name="closed" value="true" />
+      <created>1743260511470</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1743260511470</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="测试平台系列(18) 项目用例表设计和权限改造-添加配置项&#10;自己修改了role的取值跟传值，测试是有问题的，但是为了不耽搁学习，暂时先这样" />
     <MESSAGE value="测试平台系列(19) 编写项目的增删改查接口和页面(1)" />
     <MESSAGE value="测试平台系列(20) 编写项目的增删改查接口和页面(1)" />
     <MESSAGE value="测试平台系列(22) 编写项目的增删改查接口和页面(4)" />
@@ -560,16 +596,156 @@
     <MESSAGE value="新增sql在线执行接口，修复连接池，支持autocommit2" />
     <MESSAGE value="新增用例目录相关功能" />
     <MESSAGE value="新增断言和造数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增断言和造数据" />
+    <MESSAGE value="新增python脚本作为前置条件，切勿滥用" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增python脚本作为前置条件，切勿滥用" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/dao/project/ProjectDao.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/dao/project/ProjectDao.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/AsyncHttpClient.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="260" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/config/system.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="270" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/config/system.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="273" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/testcase/testcase.py</url>
+          <line>260</line>
+          <option name="timeStamp" value="276" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/testcase/testcase.py</url>
+          <line>257</line>
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/dao/test_case/TestcaseDataDao.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="280" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/testcase/testcase.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="282" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/testcase/testcase.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="283" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="299" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="301" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="303" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>89</line>
+          <option name="timeStamp" value="304" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="305" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="306" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="307" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
+          <line>87</line>
+          <option name="timeStamp" value="308" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="310" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="314" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="315" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="316" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="317" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-defaults>
+        <breakpoint type="python-line" />
+      </breakpoints-defaults>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pity$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1724528526707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
-    <SUITE FILE_PATH="coverage/pity$gconfig_parser.coverage" NAME="gconfig_parser 覆盖结果" MODIFIED="1732614537657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />
+    <SUITE FILE_PATH="coverage/pity$run.coverage" NAME="run 覆盖结果" MODIFIED="1734072616607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pity$testjson.coverage" NAME="testjson 覆盖结果" MODIFIED="1733810827634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pity$pity.coverage" NAME="pity 覆盖结果" MODIFIED="1731573079485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pity$app.coverage" NAME="run 覆盖结果" MODIFIED="1724362217649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pity$main.coverage" NAME="main 覆盖结果" MODIFIED="1741428393911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pity$run.coverage" NAME="run 覆盖结果" MODIFIED="1734072616607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pity$config.coverage" NAME="config 覆盖结果" MODIFIED="1724058835991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1724528526707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
+    <SUITE FILE_PATH="coverage/pity$app.coverage" NAME="run 覆盖结果" MODIFIED="1724362217649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$gconfig_parser.coverage" NAME="gconfig_parser 覆盖结果" MODIFIED="1732614537657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />
+    <SUITE FILE_PATH="coverage/pity$main.coverage" NAME="main 覆盖结果" MODIFIED="1743247048776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

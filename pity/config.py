@@ -1,4 +1,6 @@
+import json
 import os
+from typing import List, Dict, Union
 
 
 class Config(object):
@@ -22,6 +24,14 @@ class Config(object):
     MYSQL_PWD = "root"
     DBNAME = "pity"
 
+    # Redis连接信息  密码123456
+    REDIS_HOST = "127.0.0.1"
+    REDIS_PORT = 6379
+    REDIS_DB = 0
+    REDIS_PASSWORD = ""
+
+    REDIS_NODES = [{"host": REDIS_HOST, "port": REDIS_PORT, "db": REDIS_DB, "password": REDIS_PASSWORD}]
+
     # sqlalchemy
     SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://{}:{}@{}:{}/{}'.format(
         MYSQL_USER, MYSQL_PWD, MYSQL_HOST, MYSQL_PORT, DBNAME)
@@ -30,7 +40,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # 权限 0 普通用户 1 组长 2 管理员
-    GUEST = 0
+    MEMBER = 0
     MANAGER = 1
     ADMIN = 2
 
@@ -47,3 +57,35 @@ class Config(object):
     # SECRET
     SECRET_KEY = "490e04ca7426209c0b43b4ae4884a70e01c7c785"
     # SECRET_KEY = "c79fafe58ff45f6b5b51ddde70d2d645209e38b9"
+
+    # 测试报告路径
+    REPORT_PATH = os.path.join(ROOT, "templates", "report.html")
+
+    # APP 路径
+    APP_PATH = os.path.join(ROOT, "app")
+
+    # dao路径
+    DAO_PATH = os.path.join(APP_PATH, 'dao')
+
+    # SERVER_REPORT = "http://test.pity.fun/record/report/"
+    SERVER_REPORT = "http://127.0.0.1/record/report/"
+
+    ALIYUN = "aliyun"
+    GITEE = "gitee"
+
+    # 请求类型
+    class BodyType:
+        none = 0
+        json = 1
+        form = 2
+        x_form = 3
+        binary = 4
+        graphQL = 5
+        # 前置条件类型
+
+    class ConstructorType:
+        testcase = 0
+        sql = 1
+        redis = 2
+        py_script = 3
+        http = 4
