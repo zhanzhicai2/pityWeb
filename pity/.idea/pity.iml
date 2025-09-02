@@ -16,9 +16,6 @@
   <component name="PyDocumentationSettings">
     <option name="renderExternalDocumentation" value="true" />
   </component>
-  <component name="SonarLintModuleSettings">
-    <option name="uniqueId" value="dbae6432-5be7-4dd8-b6d7-e141f3041959" />
-  </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
     <option name="TEMPLATE_FOLDERS">

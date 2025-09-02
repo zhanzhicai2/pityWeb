@@ -1,80 +1,86 @@
-import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Menu, Spin } from 'antd';
+import {LogoutOutlined, SettingOutlined, UserOutlined} from '@ant-design/icons';
+import {Avatar, Menu, Spin} from 'antd';
 import React from 'react';
-import { history, connect } from 'umi';
+import {connect, history} from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 
 class AvatarDropdown extends React.Component {
-  onMenuClick = (event) => {
-    const { key } = event;
+    onMenuClick = (event) => {
+        const {key} = event;
 
-    if (key === 'logout') {
-      const { dispatch } = this.props;
+        if (key === 'logout') {
+            const {dispatch} = this.props;
 
-      if (dispatch) {
-        dispatch({
-          type: 'login/logout',
-        });
-      }
+            if (dispatch) {
+                dispatch({
+                    type: 'login/logout',
+                });
+            }
 
-      return;
-    }
+            return;
+        }
 
-    history.push(`/account/${key}`);
-  };
+        if (key === 'center') {
+            history.push('/member/${this.props.currentUser.id}');
+            return;
+        }
 
-  render() {
-    const {
-      currentUser = {
-        avatar: '',
-        name: '',
-      },
-      menu,
-    } = this.props;
-    const menuHeaderDropdown = (
-      <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
-        {menu && (
-          <Menu.Item key="center">
-            <UserOutlined />
-            个人中心
-          </Menu.Item>
-        )}
-        {menu && (
-          <Menu.Item key="settings">
-            <SettingOutlined />
-            个人设置
-          </Menu.Item>
-        )}
-        {menu && <Menu.Divider />}
+        history.push(`/account/${key}`);
+    };
 
-        <Menu.Item key="logout">
-          <LogoutOutlined />
-          退出登录
-        </Menu.Item>
-      </Menu>
-    );
-    return currentUser && currentUser.name ? (
-      <HeaderDropdown overlay={menuHeaderDropdown}>
+    render() {
+        const {
+            currentUser = {
+                avatar: '',
+                name: '',
+            },
+            menu,
+        } = this.props;
+        const menuHeaderDropdown = (
+            <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
+                {menu && (
+                    <Menu.Item key="center">
+                        <UserOutlined/>
+                        个人中心
+                    </Menu.Item>
+                )}
+                {menu && (
+                    <Menu.Item key="settings">
+                        <SettingOutlined/>
+                        个人设置
+                    </Menu.Item>
+                )}
+                {menu && <Menu.Divider/>}
+
+                <Menu.Item key="logout">
+                    <LogoutOutlined/>
+                    退出登录
+                </Menu.Item>
+            </Menu>
+        );
+        return currentUser && currentUser.name ? (
+            <HeaderDropdown overlay={menuHeaderDropdown}>
         <span className={`${styles.action} ${styles.account}`}>
-          <Avatar size="small" className={styles.avatar} src={currentUser.avatar} alt="avatar" />
+          <Avatar size="small" className={styles.avatar}
+                  src={currentUser.avatar || `https://joeschmoe.io/api/v1/${currentUser.name}`} alt="avatar"/>
           <span className={`${styles.name} anticon`}>{currentUser.name}</span>
         </span>
-      </HeaderDropdown>
-    ) : (
-      <span className={`${styles.action} ${styles.account}`}>
+            </HeaderDropdown>
+        ) : (
+            <span className={`${styles.action} ${styles.account}`}>
         <Spin
-          size="small"
-          style={{
-            marginLeft: 8,
-            marginRight: 8,
-          }}
+            size="small"
+            style={{
+                marginLeft: 8,
+                marginRight: 8,
+            }}
         />
       </span>
-    );
-  }
+        );
+    }
 }
 
-export default connect(({ user }) => ({
-  currentUser: user.currentUser,
+export default connect(({user}) => ({
+    currentUser: user.currentUser,
 }))(AvatarDropdown);

@@ -4,26 +4,512 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c72a3621-16d1-42fa-bbb5-b40dfa541e7f" name="更改" comment="新增python脚本作为前置条件，切勿滥用">
-      <change afterPath="$PROJECT_DIR$/app/core/constructor/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/constructor/python_constructor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/schema/script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/online/script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/case_constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/case_constructor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/constructor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/redis_constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/redis_constructor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/sql_constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/constructor/sql_constructor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/constructor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/project_role.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/project_role.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/online/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/online/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/request/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/request/http.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/testcase/testcase.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/testcase/testcase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/scheduler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/记录信息" beforeDir="false" afterPath="$PROJECT_DIR$/test/记录信息" afterDir="false" />
+    <list default="true" id="c72a3621-16d1-42fa-bbb5-b40dfa541e7f" name="更改" comment="新增地址和七牛图图，新增地址管理功能，并运用到测试用例">
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jupyter-settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pity.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/017cb610663c965514515db669cffdf0301f21ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/064ae9a7239fdf6ddb6283c9db17877682286250" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/079525a7c2c446d0a74dc0783832f017c2b6f98f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/086911c187b9b39649c43dda3a47124ef969a6cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f4dceb5246c9412851cf41e681a3ea19810abe6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0fcc11f71c2f2a060c4c411856ece045b02b5522" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/0/10f18c65658a1d4277265acb6008dffd5b5bb9e0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/1829b060d7d4a319d7c9f2e607b8d094ec8a006f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/183c4ff7a765cee7094ab3efe6ad0689bd9159a8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19359a61ae2446b51b549167b014da2fcf265768" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a1b9769344cb239f2e540e1e6ee1efa2d3034ea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a32bbfc778a9cf7a4521f2d0c8d66450316c85f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a758b91fa3bd56824b8ffade91e3c5d1e1c4b5c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d2720f4c3ca2e926c19e15fad7f3fa817537f46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e1bac2623440c6759c63811ec7bee255c39415f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/253521696c5767be4df139cf849e9042d447a379" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/25a3e108b49ae8226f04cdb8f0753b809e469c71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/25c0e7b5525ff60faf8947c91eff2bda28e800f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/288197808fab8a8f17a25cde3bfccd668e8894f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2ba7796c48069bff4d6d308419566a263853d55e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2c10c83225cd944f3325b3dd9e92b2e8df0c816d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2c4f32ee6fda672f5fce81bd0a38e31fb05623f9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2c6390c1cb0ff5e4b03779e2f12b52fac69b1de5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cfc19aa3689f96e3e5257ac8c751d084ec3fdd6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2de7552aeeebc58f95d0e898b9fb846184cd8c9b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2ed6a75de64031400d5f3e9345b56f9b77f8376b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33929163ac1a1e560f300c2706bbe698fbe1ad4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33ba7a6876fb7928160635f95668fab53a58d757" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/41e4204072d87797d4ee7070c97f529481acdc01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/4296f3e2d5cb2185fadc050ff45fb7825effca07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4aab98279964659e1a19568245b08d111492830f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4ddfb6ab8f674e8c4fa5b2465f4b9e29d23fc2c4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/51c7f2821919088b179865604279e9fb205e8237" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52bea7eeb2587204d706b8e372c9b70e5268844e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/8/588baadfc5cfe65fc63547a1fd6f829f7db27fa8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/68158840e3ad66a4f5683b3632ccc04fc46445e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b5a07a517e9a3845a279675e888c81b77b9d712" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/731c97554f539a7c3587b8a93100cd48ea8a25a4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/7487ac247c07a994b8392d6723497eacb49b1162" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/5/7537f0dff3755588004406fea47b21725c39f00e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/8/78ee701a5957dcfe9c137a6e97d6a6e1a5f4c82d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a73b33b83678ca03334c2eb21aa12324116dc32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7aeede20015ed8282a0ac7953e1c0bac5decbf43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7bfd419401f99eb6feca0b45af1144d2bdb33afe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7efa1f84d65d1252e6267e54f806d9242cf5dd96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/806d6ceb4e60342798038124ccf7dc1a423a4433" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/825cf6198227d0730b2712a48d9b077bb27fe432" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/8324680fc466418295d32cbdf21deaf04cdc194b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85083269b1f70598c2ffeea3d3f835582a2b7281" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/859dedb841cc39c2f8b5532a698469fc622ae7c5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/8813d1095e7d072799472a1915f62151275a39e3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88b2ed6ccffde71d3c4b0ced35aedea0f526797a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/9/89985a72863407ec537059cd31903ef25133c043" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8ccb3ee8b3df65947d3b3c817173ecfa110c8e4f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/930e067c732d02bc18584ff0d6e3ee43a98c9c6d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99b753d94c1ca0aad10be1aa743d28bc3221cb9f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f30ae46690cd5c50f70ff89b3f67bb56c2af5fa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/5/a54f63366e47e742d1e6bbd8e91b6638b1557743" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a773909105d2195652be326708326e7d2e8b1a30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a86ba28ce0010712ba77c184ff555d4ba6fb8cf3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a907fc3460dda7e7d813c1dd8e40979079171659" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/abbc0b43e8cc22de5b955991568d71f2a331ea33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/add8ab22273c66a25ae42c61c05c92092db1f28e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/2/b20f2ee60b58ceba676c4a612621cbd86f890342" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b5b52b02a31c2470dd8f17ada74a1df3b2609f69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b66be3667bbc839f7bd0148803b1eef789f43f89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb2c1cd9f638e7f0e2a520e5511518c9ca021c8c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb8c08663062a7e2151cbd4cf0a6f98cb498bd55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c0f9a067ec129d2da8dfbc700b5770a29c3e4877" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c11919c69fa5a21285da2968088211d577f748c0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c312f58f585f0a4d50f84aaafabaab0c068fdff4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c47db3a600ec69b8509af9537816817b7f0bd8de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c6cc799e9d57e113413b3124fcb51e0b920206eb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/ccb3197f21af0afedca892bbd9a7556f4625dba5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d43424ce80ed73d68e9ea7538f07e66b6d586328" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4ade68d462d6e2ec599f19570b0aff6e6b0a092" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/dd5173e07c94c0d4389c48e380e7dbcd34e9f895" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e005aefc37f73a8f804e4e7e1b0fbc7e51041a1a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3579699ed0f5d4de9c826558f910eb51f0a21bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e35e413a337dff479d71bb1181d61c5659ea1436" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f03bf366bf3cd7738c485a92e2c75e78a6de4c1e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f068d68be81f1dd97382a8db8cee2061f1516e17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f1bdda93d9a278e358509d498e17d97764c1fb29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9afc2aff06897f4d4ec1350f97f4cd2e4684e3b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa104fe9ec5cd90adacfae7ddbe9220b6abdfacf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/c/fcc87b11840bd5d4a0840c28a95941881511a4a7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff21450db323d08aa94b055d9f32eba4d456c31e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff7cd82c7b3dd065a4e46d0c27be171d81b1b11c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/1/017cb610663c965514515db669cffdf0301f21ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/2/02783f302bad0dbd38ebded9e15395d09ec66214" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/6/064ae9a7239fdf6ddb6283c9db17877682286250" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/7/079525a7c2c446d0a74dc0783832f017c2b6f98f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/086911c187b9b39649c43dda3a47124ef969a6cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/c/0ce7892744d16b593a8590d7016a9a55692f2845" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/e/0e014aab02119503cfff4d8f0e4e3a9acff66d7a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/f/0f4dceb5246c9412851cf41e681a3ea19810abe6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/f/0fcc11f71c2f2a060c4c411856ece045b02b5522" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/0/10f18c65658a1d4277265acb6008dffd5b5bb9e0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/1/1160074174133c203048274219b7f7d24f72ebb6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/5/1588313c24a286df7727ff02fe4f13b1b87bd04d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/8/1829b060d7d4a319d7c9f2e607b8d094ec8a006f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/8/183c4ff7a765cee7094ab3efe6ad0689bd9159a8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/8/183cc1a738b8e8cc6d0039787c8e0f41375021e0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/8/185cceab09107d91c1d5f32638581b9af9b87a64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/8/189ac597113a7731d754b732d85371d5eaeeaf4b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/9/19359a61ae2446b51b549167b014da2fcf265768" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/a/1a1b9769344cb239f2e540e1e6ee1efa2d3034ea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/a/1a32bbfc778a9cf7a4521f2d0c8d66450316c85f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/a/1a758b91fa3bd56824b8ffade91e3c5d1e1c4b5c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/d/1d2720f4c3ca2e926c19e15fad7f3fa817537f46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/d/1d79c7f1fc2f35baae44d41e59d23045d5149113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/e/1e1bac2623440c6759c63811ec7bee255c39415f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/4/24ea194e1daf632ed2f9bfb34a7d9ea99bfbed5f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/5/252a28c1bea480054fd2cba43021b48f74315092" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/5/253521696c5767be4df139cf849e9042d447a379" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/5/25a3e108b49ae8226f04cdb8f0753b809e469c71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/5/25c0e7b5525ff60faf8947c91eff2bda28e800f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/6/261fc094929e6c5c29448c69321a6c36916d8277" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/7/27148a9386376ab26eafa9cb7b83f897ec73153c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/8/288197808fab8a8f17a25cde3bfccd668e8894f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/b/2b4a3bdba3658f4b955f35020f1739108a24d1db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/b/2ba7796c48069bff4d6d308419566a263853d55e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/c/2c10c83225cd944f3325b3dd9e92b2e8df0c816d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/c/2c4f32ee6fda672f5fce81bd0a38e31fb05623f9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/c/2c6390c1cb0ff5e4b03779e2f12b52fac69b1de5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/c/2cfc19aa3689f96e3e5257ac8c751d084ec3fdd6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/d/2de7552aeeebc58f95d0e898b9fb846184cd8c9b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/e/2ed6a75de64031400d5f3e9345b56f9b77f8376b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/3/33929163ac1a1e560f300c2706bbe698fbe1ad4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/3/33ba7a6876fb7928160635f95668fab53a58d757" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/a/3a7327098e3788865454276615fb046268f740d6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/c/3cd0016fefa6f8a778eced7a1fe416d117573598" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/d/3d31ba404e20ea01ccec374e3fd75b9654b68b1e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/f/3f5c9353f5f0ed843a7ef092c7006d23d4eca0a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/1/41e4204072d87797d4ee7070c97f529481acdc01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/2/4296f3e2d5cb2185fadc050ff45fb7825effca07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/44550e161f997f48820df5c12fff55bb8457c25b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/5/45a4eea2acf583e81dc25c9906f2c671a94379e2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/8/4829336a6e95bfb639aabe683ed2d87aac8d9236" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/a/4aab98279964659e1a19568245b08d111492830f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/d/4ddfb6ab8f674e8c4fa5b2465f4b9e29d23fc2c4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/512994266be2d056c050b10021d9fe2bf073d3e1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/51c7f2821919088b179865604279e9fb205e8237" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/525787bc76d02a475d0adb57f1ad2142ce4981f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/52bea7eeb2587204d706b8e372c9b70e5268844e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/3/536bb33b16fdd3d440594df732775da59aa0142d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/3/53efca75def3345d985519fa2721c7c78b1ddd17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/4/541dded7cd2ec319b5d4eb15e5722d74d6db0ab9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/7/57eae480e21844aeec1c6d4c9509196f6607cc1c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/8/588baadfc5cfe65fc63547a1fd6f829f7db27fa8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/9/5947cbc17a9db52831e6c516455ee39c11ea8152" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/a/5a7476356cc6598a3577451ba327b928ffe0f5a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/e/5e588f086bee607c81c4eed7839efc28b9afc1f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/0/60d79d085e19db3a946d9de9cabb97112a8a4aaf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/0/60eaede4a239c4382eb3e281df5340e04d7f82d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/6/66bfd2771316e6756abda4a050ec1b91f3bf8501" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/8/68158840e3ad66a4f5683b3632ccc04fc46445e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/9/69d05f9139074fb0b8495dc41146b6e82babf5a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/b/6b5a07a517e9a3845a279675e888c81b77b9d712" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/1/71f8e255c9400ae7cd9add7ddf879740c9dacc2a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/3/731c97554f539a7c3587b8a93100cd48ea8a25a4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/4/7487ac247c07a994b8392d6723497eacb49b1162" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/5/75112793eef22949fe403dbc3911a2ff75096cd5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/5/7537f0dff3755588004406fea47b21725c39f00e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/8/78d69ab09981d669a1b5a41d17f5992e2354482a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/8/78ee701a5957dcfe9c137a6e97d6a6e1a5f4c82d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/a/7a73b33b83678ca03334c2eb21aa12324116dc32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/a/7aeede20015ed8282a0ac7953e1c0bac5decbf43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/b/7bfd419401f99eb6feca0b45af1144d2bdb33afe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/d/7de976725a5a2d0a07311c265f066ab2d84068fd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/e/7e1ed211d26d6ad8996ebc761abf23880e71dd88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/e/7efa1f84d65d1252e6267e54f806d9242cf5dd96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/f/7f9f45e5fce277896eb3838cfc2fe76f25209cdd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/0/806d6ceb4e60342798038124ccf7dc1a423a4433" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/2/825cf6198227d0730b2712a48d9b077bb27fe432" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/3/8324680fc466418295d32cbdf21deaf04cdc194b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/5/85083269b1f70598c2ffeea3d3f835582a2b7281" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/5/859dedb841cc39c2f8b5532a698469fc622ae7c5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/8813d1095e7d072799472a1915f62151275a39e3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88b2ed6ccffde71d3c4b0ced35aedea0f526797a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/9/89985a72863407ec537059cd31903ef25133c043" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/a/8a5dd86a149724d10f25968e66f23390a48acee4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/c/8ccb3ee8b3df65947d3b3c817173ecfa110c8e4f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/e/8eb014490df33ceeb239e0ce288ea919ad0fe2bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/f/8f290e1d6010a09d63a115c2a0078a3e14ae52cf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/2/92e28ab7fc1cea0c7c37fe532ad25e4b12c79aed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/3/930e067c732d02bc18584ff0d6e3ee43a98c9c6d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/4/940300d355221f77252fe2c61acc39eacbc308bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/4/9455074558a193ec7fcb0cf39aeee5ffb4707dff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/6/963197d0dc72fd092b6be0519c9bb8cf1e3141c3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/6/964a9f1f5658f3ee340340981567ff9a1fb3912f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/99b753d94c1ca0aad10be1aa743d28bc3221cb9f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9f164bc08a4cb4245e4ac34fc69a8ce33e0f6c22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9f30ae46690cd5c50f70ff89b3f67bb56c2af5fa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/1/a1db941112b04922addcb61047d3e1c3cf722b7e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/2/a282ab40cc9d466984b5018c0938f54598b11980" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/5/a54f63366e47e742d1e6bbd8e91b6638b1557743" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/7/a773909105d2195652be326708326e7d2e8b1a30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/8/a86ba28ce0010712ba77c184ff555d4ba6fb8cf3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/8/a8ace36681c69e94af6eece7b11f9f74efbcc4d6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/9/a907fc3460dda7e7d813c1dd8e40979079171659" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/9/a9749d495aa8d865805418fccb64c6617c4a7870" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/b/abbc0b43e8cc22de5b955991568d71f2a331ea33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/d/add8ab22273c66a25ae42c61c05c92092db1f28e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/f/afa8cc28dbe97edfe51a0e5a40ea6f169dbd491f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/2/b20f2ee60b58ceba676c4a612621cbd86f890342" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/5/b5b52b02a31c2470dd8f17ada74a1df3b2609f69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/6/b66be3667bbc839f7bd0148803b1eef789f43f89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/9/b99ec6f7f841b3b54e33a0f193595679f83f1960" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/b/bb2c1cd9f638e7f0e2a520e5511518c9ca021c8c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/b/bb8c08663062a7e2151cbd4cf0a6f98cb498bd55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/c/bce281794c04b15c02c8a10306e3fc20c6ec91c8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/e/be281f5744ca1ffbb44bdd13d35d1d130dac8490" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/0/c0f9a067ec129d2da8dfbc700b5770a29c3e4877" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/1/c11919c69fa5a21285da2968088211d577f748c0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/2/c251d12053a62d39616287de2e3a7ebd46978d82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/3/c312f58f585f0a4d50f84aaafabaab0c068fdff4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/3/c3ea9f7af49342f44b55227c987c71084f76a833" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/4/c47db3a600ec69b8509af9537816817b7f0bd8de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/5/c59f00d488df57d846ed688d311eba5c3fe9434d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/6/c6cc799e9d57e113413b3124fcb51e0b920206eb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/8/c8be929e0cba380c7df074926f55e51cfcbcfab0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/c/cc6276a42038a4f9f12747a66097f54984f3f7f9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/c/ccb3197f21af0afedca892bbd9a7556f4625dba5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/d/cd16a505b8082ceccbbecf5e9758ed73be3a1f37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/d/cde27460b4e01f715924d0e7ed041d9616d2f8e7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/0/d04bbc966168a2196bd0af856313a965070b927b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/2/d2db9dc892d2293c9014ddaa423544dac5653434" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d43424ce80ed73d68e9ea7538f07e66b6d586328" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d4ade68d462d6e2ec599f19570b0aff6e6b0a092" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d544d030260b8f7d753430905f6b6f4d34c27e33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/8/d84513684d01938b65661cf0358065b11872e9bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/9/d9d06583837cf02ffb9b2195031fa0746d309ed9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/da4198c67b934c263931b3d5e7415d94bb699ed0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/daf6db31f9300faffb8dfca479a118ee2dfb90c6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/d/dd5173e07c94c0d4389c48e380e7dbcd34e9f895" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/0/e005aefc37f73a8f804e4e7e1b0fbc7e51041a1a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/0/e0f164906b3846abf2bc03a7f601fd995c2bb921" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/3/e3579699ed0f5d4de9c826558f910eb51f0a21bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/3/e35e413a337dff479d71bb1181d61c5659ea1436" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/5/e52c7b25210c4d4c5048047fde27657d87c03bdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/d/edd30950e3c22218506494da655ec107a462912d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/f/ef4d280f823eb8bfe4dffcf10f2abfcf712a667a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/0/f03bf366bf3cd7738c485a92e2c75e78a6de4c1e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/0/f068d68be81f1dd97382a8db8cee2061f1516e17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/1/f1bdda93d9a278e358509d498e17d97764c1fb29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/1/f1be5a7eeaa68308db5099c34e89b5ae3a4200d1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/2/f2919e180f0dc788e525cef45e5fb4f0e53d4384" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/5/f59ed9386f8f0c1eb3f1baed4de2b1c3f87655e0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/9/f9afc2aff06897f4d4ec1350f97f4cd2e4684e3b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/a/fa104fe9ec5cd90adacfae7ddbe9220b6abdfacf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/c/fcc87b11840bd5d4a0840c28a95941881511a4a7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/f/ff21450db323d08aa94b055d9f32eba4d456c31e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/f/ff7cd82c7b3dd065a4e46d0c27be171d81b1b11c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/script.py.mako" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/0edf0a83b569_test1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/229c84671864_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/3a736c89729a_directory_id.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/4fb3f1ff2664_test202502.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/5b4e0126b905_test20250415.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/759c9eaef832_fix_missing_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/77c83c29102f_数据驱动.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/7f2a7b8b7e25_test2503.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/85f792493451_test20250302.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/8b874b450094_test20250304.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/e295c3c01222_constructor_index.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aliyuntest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/auth/UserDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/auth/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/auth/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/project/project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/request/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/request/http.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/testcase/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/testcase/testcase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/configuration.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/constructor/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/constructor/case_constructor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/constructor/constructor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/constructor/python_constructor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/constructor/redis_constructor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/constructor/sql_constructor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/executor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/msg/mail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/msg/notification.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/msg/wss_msg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/ws_connection_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/auth/UserDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/auth/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/config/DbConfigDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/config/EnvironmentDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/config/GConfigDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/config/RedisConfigDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/config/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/notification/BroadcastReadDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/notification/NotificationDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/notification/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/operation/PityOperationDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/operation/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/oss/PityOssDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/oss/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/project/ProjectDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/project/ProjectRoleDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/ConstructorDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/TestCaseAssertsDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/TestCaseDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/TestCaseDirectory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/TestPlan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/TestReport.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/TestResult.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/TestcaseDataDao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/test_case/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/enums/GconfigEnum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/enums/MessageEnum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/enums/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/excpetions/ParamsException.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/excpetions/RedisException.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/excpetions/RequestException.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/excpetions/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/handler/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/handler/encoder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/handler/fatcory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/handler/page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/AsyncHttpClient.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/AsyncHttpClientTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/GrpcClient.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/HttpClient.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/Jwt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/RedisManager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/Scheduler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/oss/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/oss/aliyun.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/oss/files.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware/oss/gitee.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/basic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/broadcast_read_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/constructor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/database.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/environment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/gconfig.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/notification.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/operation_log.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/oss_file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/project_role.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/redis_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/report.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/result.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/constructor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/database.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/environment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/gconfig.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/notification.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/online_redis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/online_sql.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/redis_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/test_plan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/testcase_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/testcase_directory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/testcase_schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema/wechat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/test_case.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/test_plan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/testcase_asserts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/testcase_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/testcase_directory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/auth/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/auth/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/auth/user_schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/config/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/config/dbconfig.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/config/environment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/config/gconfig.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/config/redis_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/config/system.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/notification/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/notification/message.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/online/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/online/script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/online/sql.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/operation/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/operation/operation_log.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/oss/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/oss/giee.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/oss/oss_file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/oss/qiniu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/oss/tencent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/project/project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/project/project_schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/request/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/request/http.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/request/http_schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/testcase/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/testcase/testcase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/testcase/testplan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/case_logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/constructor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/decorator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/gconfig_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/json_compare.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/scheduler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gunicorn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/pity.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements_copy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/CNAME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/home_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/icons/icon-128x128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/icons/icon-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/icons/icon-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/layouts__BasicLayout.e9f476f3.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/layouts__BasicLayout.f5ba40a7.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/layouts__BlankLayout.0e35c376.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/layouts__SecurityLayout.9e23f069.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/layouts__UserLayout.016fc469.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/layouts__UserLayout.1f9aa863.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__404.acec162a.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Admin.35a7d1b3.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Admin.feb5474f.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Environment.3536b6a3.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Environment.86d1c58e.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__GConfig.66a1f812.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__GConfig.9ccc5762.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Project__Project.05e3f5a6.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Project__Project.58f0bb76.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Project__ProjectDetail.24a5de16.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Project__ProjectDetail.9f3bf9e6.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Request.94af71de.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Request.d77d4bad.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__TableList.de22c5ba.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__TableList.f9d5259c.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__User__login.34113024.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__User__login.cc2c48dd.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Welcome.05b2dfea.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__Welcome.72864ae1.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/p__testRequest.a797125f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/pro_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/static/bg.29259444.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/static/logo.7edeb0ec.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/umi.21992b5d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/umi.75a41841.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__BasicLayout~p__Admin~p__Environment~p__GConfig~p__Project__Project~p__Project__Proj~27755160.018eff57.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__BasicLayout~p__Admin~p__Environment~p__GConfig~p__Project__Project~p__Project__Proj~27755160.2b964e79.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__BasicLayout~p__Admin~p__Environment~p__GConfig~p__Project__Project~p__Project__Proj~8b5113d1.1c922d68.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__BasicLayout~p__Admin~p__Environment~p__GConfig~p__Project__Project~p__Project__Proj~8b5113d1.eddfefbb.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__BasicLayout~p__Admin~p__Environment~p__GConfig~p__Project__Project~p__Project__Proj~e51a1903.3867ea8a.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__BasicLayout~p__Admin~p__Environment~p__GConfig~p__Project__Project~p__Project__Proj~e51a1903.78beac42.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__BasicLayout~p__Environment~p__GConfig~p__Project__Project~p__Project__ProjectDetail~70830196.595ce7cc.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__BasicLayout~p__Environment~p__GConfig~p__Project__Project~p__Project__ProjectDetail~70830196.8640560f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__UserLayout.0c75f8b2.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~layouts__UserLayout.2c52b503.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~p__Admin~p__User__login.4d41d4c2.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~p__Request~p__User__login~p__testRequest.be46b406.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~p__Request~p__User__login~p__testRequest.fde99608.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~p__Welcome.0e455c3c.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~p__Welcome.bf580272.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~p__testRequest.4353c367.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/vendors~p__testRequest.9c782e5f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/supervisor.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testjson.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/记录信息" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +520,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Python Script" />
       </list>
@@ -69,42 +557,56 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2krzFaTTD06x2nkvaEct8BzcqME" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.main.executor": "Run",
-    "Python.testcase.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "fastapimain",
-    "last_opened_file_path": "/Users/zhicaizhan/Desktop/py/wuranxu/pity/statics",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.idesettings.debugger.python",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.executor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pity.executor&quot;: &quot;Run&quot;,
+    &quot;Python.runserver.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testcase.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testjson.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fastapimain&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zhicaizhan/Desktop/py/wuranxu/pity/statics&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.28409094&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="pity" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="pity" />
+      </console-settings>
+    </option>
+  </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySupportQtDebugging" value="false" />
   </component>
@@ -114,15 +616,15 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/core/constructor" />
-      <recent name="$PROJECT_DIR$/app/core" />
-      <recent name="$PROJECT_DIR$/app/models/schema" />
-      <recent name="$PROJECT_DIR$/app/controllers/auth" />
-      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/excpetions/database" />
+      <recent name="$PROJECT_DIR$/pity_proxy" />
+      <recent name="$PROJECT_DIR$/app/excpetions/convert" />
+      <recent name="$PROJECT_DIR$/app/schema" />
+      <recent name="$PROJECT_DIR$/app/core/request" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="gconfig_parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.pity">
+    <configuration name="executor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pity" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,12 +633,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/core" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/utils/gconfig_parser.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/core/executor.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,7 +670,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pity" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,12 +684,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pity.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -266,27 +763,27 @@
     </configuration>
     <list>
       <item itemvalue="Flask 服务器.pity" />
-      <item itemvalue="Python.gconfig_parser" />
+      <item itemvalue="Python.pity" />
+      <item itemvalue="Python.executor" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.run" />
       <item itemvalue="Python.testcase" />
       <item itemvalue="Python.testjson" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.testcase" />
-        <item itemvalue="Python.run" />
+        <item itemvalue="Python.pity" />
         <item itemvalue="Python.testjson" />
-        <item itemvalue="Python.gconfig_parser" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.executor" />
+        <item itemvalue="Python.testcase" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
-        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
@@ -317,7 +814,46 @@
       <workItem from="1741626925143" duration="27836000" />
       <workItem from="1741720276140" duration="16000" />
       <workItem from="1741769351430" duration="33915000" />
-      <workItem from="1742983878577" duration="40166000" />
+      <workItem from="1742983878577" duration="123230000" />
+      <workItem from="1746691909005" duration="595000" />
+      <workItem from="1746693546835" duration="56000" />
+      <workItem from="1746696154183" duration="52000" />
+      <workItem from="1746696216632" duration="26072000" />
+      <workItem from="1748018001666" duration="1071000" />
+      <workItem from="1748019179842" duration="10240000" />
+      <workItem from="1748750961654" duration="66000" />
+      <workItem from="1748781430105" duration="36870000" />
+      <workItem from="1749087637106" duration="5911000" />
+      <workItem from="1749492719849" duration="5372000" />
+      <workItem from="1749520918720" duration="641000" />
+      <workItem from="1749521572753" duration="61000" />
+      <workItem from="1749521644546" duration="37441000" />
+      <workItem from="1751298506008" duration="25349000" />
+      <workItem from="1751883520855" duration="2060000" />
+      <workItem from="1752002532361" duration="2087000" />
+      <workItem from="1752115000488" duration="9745000" />
+      <workItem from="1752569688241" duration="830000" />
+      <workItem from="1752635971470" duration="269000" />
+      <workItem from="1752652397028" duration="8650000" />
+      <workItem from="1752735700304" duration="5053000" />
+      <workItem from="1752773779511" duration="46114000" />
+      <workItem from="1753504509470" duration="150000" />
+      <workItem from="1754030480331" duration="13669000" />
+      <workItem from="1754200998907" duration="40940000" />
+      <workItem from="1755070188978" duration="6225000" />
+      <workItem from="1755099237518" duration="2327000" />
+      <workItem from="1755139696877" duration="244000" />
+      <workItem from="1755244728293" duration="2114000" />
+      <workItem from="1755621540173" duration="1775000" />
+      <workItem from="1755672891605" duration="892000" />
+      <workItem from="1755709229288" duration="1081000" />
+      <workItem from="1755757203556" duration="8356000" />
+      <workItem from="1755833444809" duration="2206000" />
+      <workItem from="1755883704880" duration="5715000" />
+      <workItem from="1755932587278" duration="8983000" />
+      <workItem from="1755961318174" duration="4419000" />
+      <workItem from="1756200076508" duration="3188000" />
+      <workItem from="1756460073880" duration="834000" />
     </task>
     <task id="LOCAL-00001" summary="修复git练习">
       <created>1724218314075</created>
@@ -553,7 +1089,47 @@
       <option name="project" value="LOCAL" />
       <updated>1743260511470</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="新增枚举类🎉 测试报告显示测试计划">
+      <option name="closed" value="true" />
+      <created>1744769856197</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1744769856197</updated>
+    </task>
+    <task id="LOCAL-00035" summary="1. add system config� 2. change oss� 3. fix bug(constructor_case) 4. fix bug: test plan execute error�  5. execute sql switch to async session��">
+      <option name="closed" value="true" />
+      <created>1744797703976</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1744797703976</updated>
+    </task>
+    <task id="LOCAL-00036" summary="还原数据库连接为同步连接">
+      <option name="closed" value="true" />
+      <created>1744798175360</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1744798175360</updated>
+    </task>
+    <task id="LOCAL-00037" summary="测试平台系列(111) 利用loguru改造日志模块">
+      <option name="closed" value="true" />
+      <created>1747994850114</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1747994850114</updated>
+    </task>
+    <task id="LOCAL-00038" summary="测试平台系列(111) 利用loguru改造日志模块,修复http请求问题（body/header为空）">
+      <option name="closed" value="true" />
+      <created>1747995449971</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1747995449971</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +1140,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -572,15 +1154,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="测试平台系列(19) 编写项目的增删改查接口和页面(1)" />
-    <MESSAGE value="测试平台系列(20) 编写项目的增删改查接口和页面(1)" />
-    <MESSAGE value="测试平台系列(22) 编写项目的增删改查接口和页面(4)" />
-    <MESSAGE value="生成依赖文件pip freeze &gt; requirements.txt" />
-    <MESSAGE value="测试平台系列(24) 编写成员管理功能" />
-    <MESSAGE value="测试平台系列(24) 新增用例树" />
-    <MESSAGE value="测试平台系列(24) 新增用例树--修改用例详情页后面可能暂停，后台作者已经改成fastapi，自己可能重新复制一份" />
-    <MESSAGE value="测试平台系列(29) 新增用例树--修改用例详情页后面可能暂停，后台作者已经改成fastapi，自己可能重新复制一份" />
-    <MESSAGE value="测试平台系列(29) fastapi" />
     <MESSAGE value="新增用例编辑功能" />
     <MESSAGE value="新增环境管理功能" />
     <MESSAGE value="修改remarks" />
@@ -597,18 +1170,27 @@
     <MESSAGE value="新增用例目录相关功能" />
     <MESSAGE value="新增断言和造数据" />
     <MESSAGE value="新增python脚本作为前置条件，切勿滥用" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增python脚本作为前置条件，切勿滥用" />
+    <MESSAGE value="新增枚举类 测试报告显示测试计划" />
+    <MESSAGE value="1. add system config� 2. change oss� 3. fix bug(constructor_case) 4. fix bug: test plan execute error�  5. execute sql switch to async session��" />
+    <MESSAGE value="还原数据库连接为同步连接" />
+    <MESSAGE value="测试平台系列(111) 利用loguru改造日志模块" />
+    <MESSAGE value="测试平台系列(111) 利用loguru改造日志模块,修复http请求问题（body/header为空）" />
+    <MESSAGE value="新增获取用户周统计case功能" />
+    <MESSAGE value="替换断言和后置条件顺序" />
+    <MESSAGE value="新增地址和七牛图图" />
+    <MESSAGE value="新增地址和七牛图图，新增地址管理功能，并运用到测试用例" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增地址和七牛图图，新增地址管理功能，并运用到测试用例" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectDao.py</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/app/crud/project/ProjectDao.py</url>
+          <line>30</line>
           <option name="timeStamp" value="251" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/project/ProjectDao.py</url>
+          <url>file://$PROJECT_DIR$/app/crud/project/ProjectDao.py</url>
           <line>36</line>
           <option name="timeStamp" value="253" />
         </line-breakpoint>
@@ -629,123 +1211,217 @@
         </line-breakpoint>
         <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/routers/testcase/testcase.py</url>
-          <line>260</line>
+          <line>251</line>
           <option name="timeStamp" value="276" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/routers/testcase/testcase.py</url>
-          <line>257</line>
+          <line>248</line>
           <option name="timeStamp" value="277" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/dao/test_case/TestcaseDataDao.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="280" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/testcase/testcase.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="282" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/testcase/testcase.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="283" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
-          <line>16</line>
+          <line>19</line>
           <option name="timeStamp" value="299" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>72</line>
+          <line>88</line>
           <option name="timeStamp" value="301" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>74</line>
+          <line>90</line>
           <option name="timeStamp" value="302" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>73</line>
-          <option name="timeStamp" value="303" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
           <line>89</line>
+          <option name="timeStamp" value="303" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
+          <line>105</line>
           <option name="timeStamp" value="304" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>92</line>
+          <line>108</line>
           <option name="timeStamp" value="305" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
-          <line>78</line>
+          <line>108</line>
           <option name="timeStamp" value="306" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
-          <line>85</line>
+          <line>115</line>
           <option name="timeStamp" value="307" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
-          <line>87</line>
+          <line>117</line>
           <option name="timeStamp" value="308" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="310" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/routers/oss/oss_file.py</url>
           <line>28</line>
-          <option name="timeStamp" value="312" />
+          <option name="timeStamp" value="310" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>58</line>
+          <line>74</line>
           <option name="timeStamp" value="313" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>59</line>
+          <line>75</line>
           <option name="timeStamp" value="314" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>60</line>
+          <line>76</line>
           <option name="timeStamp" value="315" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>62</line>
+          <line>78</line>
           <option name="timeStamp" value="316" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
+        <line-breakpoint type="python-line">
           <url>file://$PROJECT_DIR$/app/middleware/oss/gitee.py</url>
-          <line>61</line>
+          <line>77</line>
           <option name="timeStamp" value="317" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/core/executor.py</url>
+          <line>238</line>
+          <option name="timeStamp" value="340" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/core/executor.py</url>
+          <line>249</line>
+          <option name="timeStamp" value="341" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/auth/user.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="346" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/auth/user.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="347" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/auth/user.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="348" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/auth/UserDao.py</url>
+          <line>144</line>
+          <option name="timeStamp" value="349" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/auth/UserDao.py</url>
+          <line>153</line>
+          <option name="timeStamp" value="350" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/auth/UserDao.py</url>
+          <line>154</line>
+          <option name="timeStamp" value="351" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/auth/UserDao.py</url>
+          <line>156</line>
+          <option name="timeStamp" value="352" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/auth/UserDao.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="353" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/workspace/workspace.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="354" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/workspace/workspace.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="355" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/workspace/workspace.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="356" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/project/ProjectDao.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="357" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/test_case/TestCaseDao.py</url>
+          <line>351</line>
+          <option name="timeStamp" value="358" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/project/ProjectDao.py</url>
+          <line>155</line>
+          <option name="timeStamp" value="359" />
+        </line-breakpoint>
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/project/ProjectDao.py</url>
+          <line>153</line>
+          <option name="timeStamp" value="360" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/test/testjson.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="366" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/test/testjson.py</url>
+          <line>109</line>
+          <option name="timeStamp" value="367" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/test_case/TestCaseDao.py</url>
+          <line>372</line>
+          <option name="timeStamp" value="368" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/crud/test_case/TestCaseDao.py</url>
+          <line>363</line>
+          <option name="timeStamp" value="369" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-defaults>
         <breakpoint type="python-line" />
       </breakpoints-defaults>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="a" language="Python" />
+        <watch expression="a" language="Python" />
+        <watch expression="a" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pity$run.coverage" NAME="run 覆盖结果" MODIFIED="1734072616607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pity$testjson.coverage" NAME="testjson 覆盖结果" MODIFIED="1733810827634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/pity$pity.coverage" NAME="pity 覆盖结果" MODIFIED="1731573079485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pity$config.coverage" NAME="config 覆盖结果" MODIFIED="1724058835991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pity$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1724528526707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
     <SUITE FILE_PATH="coverage/pity$app.coverage" NAME="run 覆盖结果" MODIFIED="1724362217649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$testjson.coverage" NAME="testjson 覆盖结果" MODIFIED="1752569898300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/pity$main.coverage" NAME="main 覆盖结果" MODIFIED="1749521096931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$run.coverage" NAME="run 覆盖结果" MODIFIED="1734072616607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$runserver.coverage" NAME="runserver 覆盖结果" MODIFIED="1753174485205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$pity.coverage" NAME="pity 覆盖结果" MODIFIED="1755932835085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pity$gconfig_parser.coverage" NAME="gconfig_parser 覆盖结果" MODIFIED="1732614537657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />
-    <SUITE FILE_PATH="coverage/pity$main.coverage" NAME="main 覆盖结果" MODIFIED="1743247048776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$config.coverage" NAME="config 覆盖结果" MODIFIED="1724058835991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pity$executor.coverage" NAME="executor 覆盖结果" MODIFIED="1749029271464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/core" />
   </component>
 </project>

@@ -1,30 +1,37 @@
-# from flask_sqlalchemy import SQLAlchemy
-# from app import pity
-# from flask_migrate import Migrate
-#
-# db = SQLAlchemy(pity)
-# migrate = Migrate(pity, db)
-# pity.app_context().push()
 import time
 from datetime import datetime
 from typing import List
 
-from sqlalchemy import create_engine
+from sqlalchemy import func, create_engine
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+
+from app.enums.DatabaseEnum import DatabaseEnum
 from config import Config
 
-# 同步engine
-engine = create_engine(Config.SQLALCHEMY_DATABASE_URI, pool_recycle=1500)
+
+def create_database():
+    engine = create_engine('mysql+mysqlconnector://{}:{}@{}:{}'.format(
+        Config.MYSQL_USER, Config.MYSQL_PWD, Config.MYSQL_HOST, Config.MYSQL_PORT), echo=True)
+    with engine.connect() as conn:
+        conn.execute("CREATE DATABASE IF NOT EXISTS pity default character set utf8mb4 collate utf8mb4_unicode_ci")
+    # close engine
+    engine.dispose()
+
+# 优先建库
+create_database()
+#  同步engine
+# engine = create_engine(Config.SQLALCHEMY_DATABASE_URI, pool_recycle=1500)
 # 异步engine
 async_engine = create_async_engine(Config.ASYNC_SQLALCHEMY_URI, pool_recycle=1500)
-Session = sessionmaker(engine)
+# 2022-05-01 彻底摆脱同步session
+# Session = session maker(engine)
 async_session = sessionmaker(async_engine, class_=AsyncSession)
 # 创建对象的基类:
 Base = declarative_base()
-# from app.models import engine, Base
-Base.metadata.create_all(engine)
+#  from app.models import engine, Base
+# Base.metadata.create_all(engine)
 
 
 class DatabaseHelper(object):
@@ -33,7 +40,7 @@ class DatabaseHelper(object):
         # cache
         self.connections = dict()
 
-    def get_connection(self, sql_type: int, host: str, port: int, username: str, password: str, database: str):
+    async def get_connection(self, sql_type: int, host: str, port: int, username: str, password: str, database: str):
         # 拼接key
         key = f"{host}:{port}:{database}:{username}:{password}:{database}"
         connection = self.connections.get(key)
@@ -43,114 +50,164 @@ class DatabaseHelper(object):
             return connection
         # 获取sqlalchemy需要的jdbc url
         jdbc_url = DatabaseHelper.get_jdbc_url(sql_type, host, port, username, password, database)
-        if jdbc_url is None:
-            return None
-        # 创建异步引擎
-        eg = create_engine(jdbc_url, pool_recycle=1500)
-        # 拿到session方法
-        ss = sessionmaker(bind=eg, autocommit=True)
+        #  创建异步引擎
+        # eg = create_engine(jdbc_url, pool_recycle=1500)
+        eg = create_async_engine(jdbc_url, pool_recycle=1500)
+        #  拿到session方法
+        # ss = session maker(bind=eg, autocommit=True)
+        ss = sessionmaker(bind=eg, class_=AsyncSession)
         # 将数据缓存起来
         data = dict(engine=eg, session=ss)
         self.connections[key] = data
         return data
 
     @staticmethod
-    def test_connection(ss):
+    async def test_connection(ss):
         if ss is None:
-            return "暂不支持的数据库类型"
-        try:
-            with ss() as session:
-                with session.begin():
-                    session.execute("select 1")
-        except Exception as e:
-            return str(e)
-        return None
+            raise Exception("暂不支持的数据库类型")
+        async with ss() as session:
+            await session.execute("select 1")
 
     @classmethod
     def get_jdbc_url(cls, sql_type, host, port, username, password, database):
-        if sql_type == 0:
+        if sql_type == DatabaseEnum.MYSQL:
             # mysql模式
-            return f'mysql+mysqlconnector://{username}:{password}@{host}:{port}/{database}'
-        elif sql_type == 1:
+            return f'mysql+aiomysql://{username}:{password}@{host}:{port}/{database}'
+        elif sql_type == DatabaseEnum.POSTGRESQL:
             return f'postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}'
-        return None
+            # return f'postgresql+asyncpg://{username}:{password}@{host}:{port}/{database}'
+        return Exception("未知的数据库类型")
 
     def remove_connection(self, host: str, port: int, username: str, password: str, database: str):
         key = f"{host}:{port}:{database}:{username}:{password}:{database}"
         if self.connections.get(key):
             self.connections.pop(key)
 
-    @staticmethod
-    def update_model(dist, source, update_user=None, not_null=False):
-        """
-        :param dist:
-        :param source:
-        :param not_null:
-        :param update_user:
-        :return:
-        """
-        for var, value in vars(source).items():
-            if not_null:
-                if value:
-                    setattr(dist, var, value)
-            else:
-                setattr(dist, var, value)
-        if update_user:
-            setattr(dist, 'update_user', update_user)
-        setattr(dist, 'updated_at', datetime.now())
-
-    @staticmethod
-    def delete_model(dist, update_user):
-        # dist.deleted_at = datetime.now()
-        """
-                删除数据，兼容老的deleted_at
-                :param dist:
-                :param update_user:
-                :return:
-                """
-        if str(dist.__class__.deleted_at.property.columns[0].type) == "DATETIME":
-            dist.deleted_at = datetime.now()
-        else:
-            dist.deleted_at = time.time()
-        dist.updated_at = datetime.now()
-        dist.update_user = update_user
-
-    # 改进多条查询
-    @classmethod
-    def where(cls, param, sentence, condition: List):
-        if param is None:
-            return cls
-        if isinstance(param, bool):
-            condition.append(sentence)
-            return cls
-        if param:
-            condition.append(sentence)
-        return cls
-
-    # 分页
-    @staticmethod
-    async def pagination(page: int, size: int, session, sql):
-        """
-        分页查询
-        :param session:
-        :param page:
-        :param size:
-        :param sql:
-        :return:
-        """
-        data = await session.execute(sql)
-        total = data.raw.rowcount
-        if total == 0:
-            return [], 0
-        sql = sql.offset((page - 1) * size).limit(size)
-        data = await session.execute(sql)
-        return data.scalars().all(), total
-
-    @staticmethod
-    def like(s: str):
-        if s:
-            return f"%{s}%"
-        return s
+    # @staticmethod
+    # def update_model(dist, source, update_user=None, not_null=False):
+    #     """
+    #     :param dist:
+    #     :param source:
+    #     :param not_null:
+    #     :param update_user:
+    #     :return:
+    #     """
+    #     changed = []
+    #     for var, value in vars(source).items():
+    #         if not_null:
+    #             if value is None:
+    #                 continue
+    #             if isinstance(value, bool) or isinstance(value, int) or value:
+    #                 # 如果是bool值或者int, false和0也是可以接受的
+    #                 if not hasattr(dist, var):
+    #                     continue
+    #                 if getattr(dist, var) != value:
+    #                     changed.append(var)
+    #                     setattr(dist, var, value)
+    #         else:
+    #             if getattr(dist, var) != value:
+    #                 changed.append(var)
+    #                 setattr(dist, var, value)
+    #     if update_user:
+    #         setattr(dist, 'update_user', update_user)
+    #     setattr(dist, 'updated_at', datetime.now())
+    #     return changed
+    #
+    # @staticmethod
+    # def delete_model(dist, update_user):
+    #     """
+    #     # dist.deleted_at = datetime.now()
+    #     删除数据，兼容老的deleted_at
+    #     :param dist:
+    #     :param update_user:
+    #     :return:
+    #    """
+    #     if str(dist.__class__.deleted_at.property.columns[0].type) == "DATETIME":
+    #         dist.deleted_at = datetime.now()
+    #     else:
+    #         dist.deleted_at = int(time.time() * 1000)
+    #     dist.updated_at = datetime.now()
+    #     dist.update_user = update_user
+    #
+    # # 改进多条查询
+    # @classmethod
+    # def where(cls, param, sentence, condition: List):
+    #     """
+    #     根据参数值决定是否将条件添加到查询列表中
+    #     Args:
+    #         param: 查询参数值
+    #         sentence: SQL查询条件
+    #         condition: 条件列表
+    #     Returns:
+    #         cls: 返回类本身以支持链式调用
+    #     """
+    #     # 对于 None 值，不添加条件
+    #     if param is None:
+    #         return cls
+    #     # 对于布尔值，只有 True 时添加条件
+    #     if isinstance(param, bool):
+    #         if param:
+    #             condition.append(sentence)
+    #         return cls
+    #     # 对于数字类型，包括 0 也视为有效值
+    #     if isinstance(param, (int, float)):
+    #         condition.append(sentence)
+    #         return cls
+    #     # 对于其他类型（字符串等），非空时添加条件
+    #     if param:
+    #         condition.append(sentence)
+    #     return cls
+    #
+    # # 分页
+    # @staticmethod
+    # async def pagination(page: int, size: int, session, sql: str, scalars=True):
+    #     """
+    #     优化后的分页查询方法
+    #     :param page: 当前页码
+    #     :param size: 每页大小
+    #     :param session: 异步会话
+    #     :param sql: SQLAlchemy 查询对象
+    #     :param scalars: 是否返回标量结果
+    #     :return: (分页数据, 总记录数)
+    #     """
+    #     #  旧方法
+    #     data = await session.execute(sql)
+    #     total = data.raw.rowcount
+    #     if total == 0:
+    #         return [], 0
+    #     sql = sql.offset((page - 1) * size).limit(size)
+    #     data = await session.execute(sql)
+    #     if scalars:
+    #         return data.scalars().all(), total
+    #     # print(data.all()+","+total)
+    #     return data.all(), total
+    #
+    #     # 1. 使用子查询获取总数（避免全表扫描） with_only_columns失败
+    #     # count_query = sql.with_only_columns(
+    #     #     func.count().over(),  # 使用窗口函数计数
+    #     #     maintain_column_froms=True
+    #     # ).order_by(None).limit(1)  # 移除排序并限制结果
+    #     #
+    #     # count_result = await session.execute(count_query)
+    #     # total = count_result.scalar_one() if count_result.rowcount > 0 else 0
+    #     #
+    #     # if total == 0:
+    #     #     return [], 0
+    #     # 2. 应用分页参数
+    #     # paginated_query = sql.offset((page - 1) * size).limit(size)
+    #     #
+    #     # # 3. 执行分页查询
+    #     # result = await session.execute(paginated_query)
+    #     #
+    #     # if scalars:
+    #     #     return result.scalars().all(), total
+    #     # return result.all(), total
+    #
+    # @staticmethod
+    # def like(s: str):
+    #     if s:
+    #         return f"%{s}%"
+    #     return s
 
 
 db_helper = DatabaseHelper()

@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from "react";
-import {EditableProTable} from "@ant-design/pro-table";
+import React,{useEffect} from 'react';
+import { EditableProTable } from '@ant-design/pro-table';
 
+export default ({columns, dataSource, title, setDataSource, editableKeys, setEditableRowKeys, extra}) => {
 
-export default ({columns, dataSource,title,setDataSource,editableKeys,setEditableRowKeys,extra}) => {
-  // const [editableKeys, setEditableRowKeys] = useState(() => dataSource.map((item) => item.id));
-
-  // useEffect(() => {
-  //   setEditableRowKeys(dataSource.map(v => v.id))
-  // }, [dataSource])
+    useEffect(() => {
+        setEditableRowKeys(dataSource.map(v => v.id))
+    }, [dataSource])
 
   return (
     <EditableProTable headerTitle={title} columns={columns} rowKey="id" value={dataSource} onChange={setDataSource}
@@ -16,13 +14,14 @@ export default ({columns, dataSource,title,setDataSource,editableKeys,setEditabl
                         record: () => ({
                           id: Date.now(),
                         }),
-    }} editable={{
+                      }}  editable={{
       type: 'multiple',
       editableKeys,
       actionRender: (row, config, defaultDoms) => {
         return [defaultDoms.delete];
       },
       onValuesChange: (record, recordList) => {
+        // console.log(record);
         if(extra){
           extra(recordList);
         }
@@ -32,4 +31,3 @@ export default ({columns, dataSource,title,setDataSource,editableKeys,setEditabl
     }}/>
   )
 }
-

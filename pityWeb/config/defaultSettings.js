@@ -1,5 +1,7 @@
 const proSettings = {
+  // navTheme: 'realdark',
   navTheme: 'dark',
+
   // 拂晓蓝
   primaryColor: '#1890ff',
   layout: 'side',
@@ -7,8 +9,8 @@ const proSettings = {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Ant Design Pro',
+  title: 'pity',
   pwa: false,
-  iconfontUrl: '',
+  iconfontUrl: '//at.alicdn.com/t/font_915840_kom9s5w2t6k.js',
 };
 export default proSettings;

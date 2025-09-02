@@ -5,13 +5,24 @@ import proxy from './proxy';
 import routes from './routes';
 const { REACT_APP_ENV } = process.env;
 export default defineConfig({
+  chainWebpack(config) {
+    config.module
+        .rule('mjs$')
+        .test(/\.mjs$/)
+        .include.add(/node_modules/).end()
+        .type('javascript/auto');
+  },
+  extraBabelIncludes: ['@bytemd'],
   hash: true,
-  antd: {},
+  antd: {
+    dark: false,
+  },
   dva: {
     hmr: true,
   },
   history: {
     type: 'browser',
+    // type: 'hash',
   },
   locale: {
     // default zh-CN
@@ -31,7 +42,8 @@ export default defineConfig({
   // Theme for antd: https://ant.design/docs/react/customize-theme-cn
   theme: {
     'primary-color': defaultSettings.primaryColor,
-    'border-radius-base':'8px'
+    'border-radius-base':'8px',
+    'font-size-base': '20px',  // 新增
   },
   title: false,
   ignoreMomentLocale: true,

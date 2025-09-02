@@ -1,34 +1,43 @@
-import logbook
-
-
-import logbook
-from app import pity
+import os.path
+import inspect
+from loguru import logger
 from config import Config
 from .decorator import SingletonDecorator
 
 
 @SingletonDecorator
 class Log(object):
-    handler = None
+    business = None
 
-    def __init__(self, name='pity', filename=Config.LOG_NAME):  # Logger标识默认为app
+    def __init__(self, name='pity'):  # Logger标识默认为app
         """
         :param name: 业务名称
-        :param filename: 文件名称
         """
-        self.handler = logbook.FileHandler(filename, encoding='utf-8')
-        logbook.set_datetime_format("local")  # 将日志时间设置为本地时间
-        self.logger = logbook.Logger(name)
-        self.handler.push_application()
+        if not os.path.exists(Config.LOG_DIR):
+            os.mkdir(Config.LOG_DIR)
+        self.business = name
 
-    def info(self, *args, **kwargs):
-        return self.logger.info(*args, **kwargs)
+    def info(self, message: str):
+        file_name, line, func, _, _ = inspect.getframeinfo(inspect.currentframe().f_back)
+        logger.bind(name=Config.PITY_INFO, func=func, line=line,
+                    business=self.business, filename=file_name).debug(message)
 
-    def error(self, *args, **kwargs):
-        return self.logger.error(*args, **kwargs)
+    def error(self, message: str):
+        file_name, line, func, _, _ = inspect.getframeinfo(inspect.currentframe().f_back)
+        logger.bind(name=Config.PITY_ERROR, func=func, line=line,
+                    business=self.business, filename=file_name).info(message)
 
-    def warning(self, *args, **kwargs):
-        return self.logger.warning(*args, **kwargs)
+    def warning(self, message: str):
+        file_name, line, func, _, _ = inspect.getframeinfo(inspect.currentframe().f_back)
+        logger.bind(name=Config.PITY_ERROR, func=func, line=line,
+                    business=self.business, filename=file_name).warning(message)
 
-    def debug(self, *args, **kwargs):
-        return self.logger.debug(*args, **kwargs)
+    def debug(self, message: str):
+        file_name, line, func, _, _ = inspect.getframeinfo(inspect.currentframe().f_back)
+        logger.bind(name=Config.PITY_INFO, func=func, line=line,
+                    business=self.business, filename=file_name).debug(message)
+
+    def exception(self, message: str):
+        file_name, line, func, _, _ = inspect.getframeinfo(inspect.currentframe().f_back)
+        logger.bind(name=Config.PITY_ERROR, func=func, line=line,
+                    business=self.business, filename=file_name).exception(message)

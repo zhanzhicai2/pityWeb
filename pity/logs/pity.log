@@ -853,3 +853,156 @@ FROM pity_testcase
 WHERE pity_testcase.id = %s AND pity_testcase.deleted_at IS NULL]
 [parameters: (8,)]
 (Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-03-31 23:34:15.636019] ERROR: EnvironmentDao: 执行用例失败: __init__() got an unexpected keyword argument 'cookies_jar'
+[2025-03-31 23:35:31.079682] ERROR: EnvironmentDao: 执行用例失败: __init__() got an unexpected keyword argument 'cookies_jar'
+[2025-03-31 23:37:23.156386] ERROR: EnvironmentDao: 执行用例失败: 主case->test 第1个构造方法执行失败: 执行redis命令出错: Redis配置不存在
+[2025-04-01 00:08:48.554150] ERROR: EnvironmentDao: 执行用例失败: 主case->test 第1个构造方法执行失败: 执行redis命令出错: Redis配置不存在
+[2025-04-01 00:17:55.958560] ERROR: EnvironmentDao: 执行用例失败: 主case->test 第1个构造方法执行失败: 执行redis命令出错: Redis配置不存在
+[2025-04-01 01:57:04.840337] ERROR: EnvironmentDao: 执行用例失败: 主case->test 第1个构造方法执行失败: 执行redis命令出错: Redis配置不存在
+[2025-04-01 01:59:21.528034] ERROR: EnvironmentDao: 执行用例失败: 主case->test 第1个构造方法执行失败: 执行redis命令出错: Redis配置不存在
+[2025-04-01 01:59:45.867467] ERROR: EnvironmentDao: 执行用例失败: __init__() got an unexpected keyword argument 'cookies_jar'
+[2025-04-01 10:01:19.927492] ERROR: EnvironmentDao: 执行用例失败: __init__() got an unexpected keyword argument 'cookies_jar'
+[2025-04-01 12:32:27.607677] ERROR: EnvironmentDao: 执行用例失败: __init__() got an unexpected keyword argument 'cookies_jar'
+[2025-04-01 12:32:44.481816] ERROR: EnvironmentDao: 执行用例失败: 主case->test 第1个构造方法执行失败: 执行redis命令出错: Redis配置不存在
+[2025-04-02 19:17:24.578216] ERROR: EnvironmentDao: 查询用例失败: Task <Task pending name='starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro' coro=<BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro() running at /Users/zhicaizhan/Desktop/py/wuranxu/pity/venv/lib/python3.9/site-packages/starlette/middleware/base.py:149> cb=[TaskGroup._spawn.<locals>.task_done() at /Users/zhicaizhan/Desktop/py/wuranxu/pity/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py:785]> got Future <Future pending> attached to a different loop
+[2025-04-03 00:16:37.443417] ERROR: EnvironmentDao: 获取目录详情失败: Task <Task pending name='starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro' coro=<BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro() running at /Users/zhicaizhan/Desktop/py/wuranxu/pity/venv/lib/python3.9/site-packages/starlette/middleware/base.py:149> cb=[TaskGroup._spawn.<locals>.task_done() at /Users/zhicaizhan/Desktop/py/wuranxu/pity/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py:785]> got Future <Future pending> attached to a different loop
+[2025-04-15 02:26:56.441112] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-15 02:27:02.164095] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-15 10:20:24.877742] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-15 10:20:31.581084] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-15 15:17:55.645886] ERROR: PityOperationDao: 获取用户列表失败: (mysql.connector.errors.ProgrammingError) 1054 (42S22): Unknown column 'pity_user.update_user' in 'field list'
+[SQL: SELECT pity_user.id AS pity_user_id, pity_user.username AS pity_user_username, pity_user.name AS pity_user_name, pity_user.password AS pity_user_password, pity_user.email AS pity_user_email, pity_user.`role` AS pity_user_role, pity_user.created_at AS pity_user_created_at, pity_user.updated_at AS pity_user_updated_at, pity_user.deleted_at AS pity_user_deleted_at, pity_user.update_user AS pity_user_update_user, pity_user.last_login_at AS pity_user_last_login_at, pity_user.avatar AS pity_user_avatar, pity_user.is_valid AS pity_user_is_valid 
+FROM pity_user 
+WHERE pity_user.deleted_at IS NULL]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+[2025-04-15 15:28:17.908645] ERROR: PityOperationDao: 获取用户列表失败: (mysql.connector.errors.ProgrammingError) 1054 (42S22): Unknown column 'pity_user.update_user' in 'field list'
+[SQL: SELECT pity_user.id AS pity_user_id, pity_user.username AS pity_user_username, pity_user.name AS pity_user_name, pity_user.password AS pity_user_password, pity_user.email AS pity_user_email, pity_user.`role` AS pity_user_role, pity_user.created_at AS pity_user_created_at, pity_user.updated_at AS pity_user_updated_at, pity_user.deleted_at AS pity_user_deleted_at, pity_user.update_user AS pity_user_update_user, pity_user.last_login_at AS pity_user_last_login_at, pity_user.avatar AS pity_user_avatar, pity_user.is_valid AS pity_user_is_valid 
+FROM pity_user 
+WHERE pity_user.deleted_at IS NULL]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+[2025-04-15 15:28:21.947094] ERROR: PityOperationDao: 获取用户列表失败: (mysql.connector.errors.ProgrammingError) 1054 (42S22): Unknown column 'pity_user.update_user' in 'field list'
+[SQL: SELECT pity_user.id AS pity_user_id, pity_user.username AS pity_user_username, pity_user.name AS pity_user_name, pity_user.password AS pity_user_password, pity_user.email AS pity_user_email, pity_user.`role` AS pity_user_role, pity_user.created_at AS pity_user_created_at, pity_user.updated_at AS pity_user_updated_at, pity_user.deleted_at AS pity_user_deleted_at, pity_user.update_user AS pity_user_update_user, pity_user.last_login_at AS pity_user_last_login_at, pity_user.avatar AS pity_user_avatar, pity_user.is_valid AS pity_user_is_valid 
+FROM pity_user 
+WHERE pity_user.deleted_at IS NULL]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+[2025-04-16 10:24:25.961037] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-16 10:24:28.485165] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-16 12:21:14.982211] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-16 23:39:25.673593] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 00:16:10.266567] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:40:35.046479] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:40:50.894224] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:41:19.426064] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:41:20.378876] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:41:20.662715] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:41:20.912186] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:41:21.142873] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:43:10.078000] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:43:18.296722] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 08:46:54.728590] ERROR: PityOperationDao: 用户2登录失败: __aenter__
+[2025-04-17 09:58:22.806238] ERROR: PityOperationDao: 用户2登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 09:59:05.817876] ERROR: PityOperationDao: 用户2登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 09:59:15.727742] ERROR: PityOperationDao: 用户2登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 09:59:49.216075] ERROR: PityOperationDao: 用户2登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 09:59:57.287488] ERROR: PityOperationDao: 用户2登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 10:00:03.044390] ERROR: PityOperationDao: 用户3登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 10:00:08.144640] ERROR: PityOperationDao: 用户3登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 10:00:13.378779] ERROR: PityOperationDao: 用户1登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 10:00:30.630906] ERROR: PityOperationDao: 用户4登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 10:00:36.129845] ERROR: PityOperationDao: 用户2登录失败: 您的账号已被封禁, 请联系管理员
+[2025-04-17 10:05:40.513855] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-17 10:06:06.395392] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-17 10:07:14.278655] ERROR: PityOperationDao: 获取数据库配置详情失败, error: Could not parse rfc1738 URL from string 'mysql+mysql connector://root:root@127.0.0.1:3306/pity'
+[2025-04-17 10:07:16.551543] ERROR: PityOperationDao: 获取数据库配置详情失败, error: Could not parse rfc1738 URL from string 'mysql+mysql connector://root:root@127.0.0.1:3306/pity'
+[2025-04-17 10:07:20.076946] ERROR: PityOperationDao: 获取数据库配置详情失败, error: Could not parse rfc1738 URL from string 'mysql+mysql connector://root:root@127.0.0.1:3306/pity'
+[2025-04-17 10:45:05.404216] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-17 10:45:40.679171] ERROR: PityOperationDao: 获取数据库配置详情失败, error: Could not parse rfc1738 URL from string 'mysql+mysql connector://root:root@127.0.0.1:3306/pity'
+[2025-04-17 10:45:43.938629] ERROR: PityOperationDao: 获取数据库配置详情失败, error: Could not parse rfc1738 URL from string 'mysql+mysql connector://root:root@127.0.0.1:3306/pity'
+[2025-04-17 10:47:17.879622] ERROR: PityOperationDao: 获取数据库配置详情失败, error: Could not parse rfc1738 URL from string 'mysql+mysql connector://root:root@127.0.0.1:3306/pity'
+[2025-04-22 17:04:04.797640] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:09:32.869183] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:09:33.339317] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:11:00.397592] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:12:35.486958] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:14:40.480052] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:15:56.124118] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:18:09.333481] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:18:29.789760] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:18:37.740466] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:20:12.529616] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:20:12.540235] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:20:38.969073] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:21:00.108332] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:21:00.124493] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:41:35.889300] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 17:41:36.187723] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 23:41:50.366475] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 23:42:44.368476] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 23:43:57.864012] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 23:44:43.202571] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-22 23:45:40.072209] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:06:08.951064] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:08:38.802579] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:08:44.975512] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:08:58.381011] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:20:15.396769] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:26:03.436981] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:34:05.602747] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:35:07.452707] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:37:01.091256] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:37:10.163644] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:37:17.284737] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:37:42.454063] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 15:39:21.090301] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 16:01:44.479470] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 16:25:18.511008] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 16:25:28.506124] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 16:28:51.961565] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 22:51:30.773853] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 22:51:44.327034] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:44:54.746887] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:50:45.627112] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:50:52.639055] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:51:03.268194] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:52:17.755390] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:52:17.756782] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:52:17.780513] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:52:28.390100] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:52:38.911654] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:55:35.616377] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:55:41.422949] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:55:41.664975] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:55:56.325951] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:56:04.679970] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:56:05.246667] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:56:51.130595] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:57:13.208708] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:57:13.412193] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:57:21.177838] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:57:30.953162] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-23 23:57:32.558495] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-24 00:07:57.724447] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-24 00:14:45.934650] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-24 00:14:54.489050] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-24 00:19:50.448481] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-25 17:22:18.201498] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-25 17:22:26.934340] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-04-25 17:39:57.782966] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-05-09 18:03:13.575687] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-09 19:14:13.000291] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-09 19:14:15.245547] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-09 19:14:15.534258] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-09 19:14:15.765301] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-09 19:14:15.979077] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-09 19:14:16.216230] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-09 19:14:23.962248] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-09 19:16:08.690966] ERROR: PityOperationDao: 用户注册失败: __aenter__
+[2025-05-10 00:22:34.050399] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'
+[2025-05-10 10:19:50.059438] ERROR: PityOperationDao: 获取<class 'app.models.notification.PityNotification'>列表失败, error: (pymysql.err.OperationalError) (1054, "Unknown column 'pity_notification.msg_title' in 'field list'")
+[SQL: SELECT pity_notification.id, pity_notification.created_at, pity_notification.updated_at, pity_notification.deleted_at, pity_notification.create_user, pity_notification.update_user, pity_notification.msg_type, pity_notification.msg_title, pity_notification.msg_content, pity_notification.msg_link, pity_notification.msg_status, pity_notification.sender, pity_notification.receiver 
+FROM pity_notification 
+WHERE pity_notification.created_at > %s AND pity_notification.msg_status = %s AND pity_notification.receiver = %s AND pity_notification.msg_type = %s]
+[parameters: (datetime.datetime(2025, 2, 9, 10, 19, 50, 47220), 1, 2, 2)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2025-05-23 16:58:58.494050] ERROR: PityOperationDao: 查询构建记录失败: Task <Task pending name='starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro' coro=<BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro() running at /Users/zhicaizhan/Desktop/py/wuranxu/pity/venv/lib/python3.9/site-packages/starlette/middleware/base.py:149> cb=[TaskGroup._spawn.<locals>.task_done() at /Users/zhicaizhan/Desktop/py/wuranxu/pity/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py:785]> got Future <Future pending> attached to a different loop
+[2025-05-23 17:07:08.805593] ERROR: PityOperationDao: 获取<class 'app.models.operation_log.PityOperationLog'>列表失败, error: type object 'PityOperationLog' has no attribute 'deleted_at'

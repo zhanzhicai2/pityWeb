@@ -3,15 +3,17 @@
  *
  * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
  */
-import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
-import React, { useEffect, useMemo, useRef } from 'react';
-import { Link, useIntl, connect, history } from 'umi';
-import { GithubOutlined } from '@ant-design/icons';
-import { Result, Button } from 'antd';
+import ProLayout, {DefaultFooter,ProBreadcrumb} from '@ant-design/pro-layout';
+import React, {useEffect, useMemo, useRef} from 'react';
+import {connect, history, Link, useIntl} from 'umi';
+import {GithubOutlined} from '@ant-design/icons';
+import {Button, Result} from 'antd';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
-import { getMatchMenu } from '@umijs/route-utils';
+import {getMatchMenu} from '@umijs/route-utils';
 import logo from '../assets/logo.svg';
+import {CONFIG} from "@/consts/config";
+
 const noMatch = (
   <Result
     status={403}
@@ -37,24 +39,27 @@ const menuDataRender = (menuList) =>
 
 const defaultFooterDom = (
   <DefaultFooter
-    copyright={`${new Date().getFullYear()} 蚂蚁集团体验技术部出品`}
+    copyright={`${new Date().getFullYear()} woody个人出品`}
     links={[
       {
-        key: 'Ant Design Pro',
-        title: 'Ant Design Pro',
-        href: 'https://pro.ant.design',
+        key: 'Pity Web',
+        title: 'Pity Web',
+        // href: 'https://pro.ant.design',
+        href: 'http://127.0.0.1:8010/user/login',
         blankTarget: true,
       },
       {
         key: 'github',
-        title: <GithubOutlined />,
+        title: <GithubOutlined/>,
         href: 'https://github.com/ant-design/ant-design-pro',
+        // href: 'https://github.com/wuranxu/pityWeb',
         blankTarget: true,
       },
       {
-        key: 'Ant Design',
-        title: 'Ant Design',
+        key: 'Pity',
+        title: 'Pity',
         href: 'https://ant.design',
+        // href: 'https://github.com/wuranxu/pity',
         blankTarget: true,
       },
     ]}
@@ -71,6 +76,12 @@ const BasicLayout = (props) => {
     },
   } = props;
   const menuDataRef = useRef([]);
+
+  // const ws = new WebSocket('ws://localhost:8080/ws');
+  //   ws.onmessage = function (event) {
+  //       console.log('Basiclayout message', event.data);
+  //   };
+
   useEffect(() => {
     if (dispatch) {
       dispatch({
@@ -96,15 +107,20 @@ const BasicLayout = (props) => {
       },
     [location.pathname],
   );
-  const { formatMessage } = useIntl();
+  const {formatMessage} = useIntl();
   return (
     <ProLayout
       logo={logo}
-      formatMessage={formatMessage}
+      // layout='top'
+      SiderMenuProps={{mode: 'horizontal'}}
+      // formatMessage={formatMessage}
       {...props}
       {...settings}
       onCollapse={handleMenuCollapse}
       onMenuHeaderClick={() => history.push('/')}
+      headerContentRender={() => {
+          return <ProBreadcrumb />;
+      }}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (
           menuItemProps.isUrl ||
@@ -141,11 +157,15 @@ const BasicLayout = (props) => {
         return null;
       }}
       menuDataRender={menuDataRender}
-      rightContentRender={() => <RightContent />}
+      rightContentRender={() => <RightContent/>}
       postMenuData={(menuData) => {
         menuDataRef.current = menuData || [];
         return menuData || [];
       }}
+      // iconfontUrl="//at.alicdn.com/t/font_915840_xhupy1nll7.js"
+      // iconfontUrl="//at.alicdn.com/t/font_915840_2ne958vidtk.js"
+      iconfontUrl={CONFIG.ICONFONT}
+      // layout='top'  // 上中下顶部布局，取消就是左右布局
     >
       <Authorized authority={authorized.authority} noMatch={noMatch}>
         {children}
@@ -154,7 +174,7 @@ const BasicLayout = (props) => {
   );
 };
 
-export default connect(({ global, settings }) => ({
+export default connect(({global, settings}) => ({
   collapsed: global.collapsed,
   settings,
 }))(BasicLayout);

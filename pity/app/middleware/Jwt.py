@@ -2,9 +2,9 @@ import hashlib
 from datetime import datetime, timedelta
 
 import jwt
-from jwt.exceptions import ExpiredSignatureError, DecodeError
+from jwt.exceptions import ExpiredSignatureError
 
-EXPIRED_HOUR = 24
+EXPIRED_HOUR = 72
 
 
 class UserToken(object):
@@ -13,15 +13,19 @@ class UserToken(object):
 
     @staticmethod
     def get_token(data):
+        expire = datetime.now() + timedelta(hours=EXPIRED_HOUR)
         new_data = dict({"exp": datetime.utcnow() + timedelta(hours=EXPIRED_HOUR)}, **data)
-        return jwt.encode(new_data, key=UserToken.key)
+        # new_data = dict({"exp": datetime.utcnow() + timedelta(minutes=1)}, **data)
+        return expire.timestamp(),jwt.encode(new_data, key=UserToken.key)
 
     @staticmethod
     def parse_token(token):
         try:
             return jwt.decode(token, key=UserToken.key, algorithms=["HS256"])
+        except ExpiredSignatureError:
+            raise Exception("登录状态已过期, 请重新登录")
         except Exception:
-            raise Exception("token解析失败, 请重新登录")
+            raise Exception("登录状态校验失败, 请重新登录")
 
     @staticmethod
     def add_salt(password):
